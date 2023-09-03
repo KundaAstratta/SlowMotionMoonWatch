@@ -1,0 +1,1367 @@
+[ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 1; ]
+import Toybox.Lang;
+[ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 2; ]
+using Toybox.WatchUi;
+[ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 3; ]
+using Toybox.WatchUi as :Ui;
+[ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 4; ]
+using Toybox.Graphics;
+[ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 5; ]
+using Toybox.Graphics as :Gfx;
+[ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 7; ]
+module Rez {
+    [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 7; ]
+    <init> {
+    }
+    [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 8; ]
+    module Drawables {
+        [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 8; ]
+        <init> {
+        }
+        [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 9; @position = 27; initialized = true; ]
+        var LauncherIcon as Symbol;
+    }
+    [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 12; ]
+    module Fonts {
+        [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 12; ]
+        <init> {
+        }
+    }
+    [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 15; ]
+    module JsonData {
+        [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 15; ]
+        <init> {
+        }
+    }
+    [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 18; ]
+    module Layouts {
+        [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 18; ]
+        <init> {
+        }
+        [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 19; ]
+        function WatchFace(dc as Graphics.Dc) as Array<WatchUi.Drawable> {
+_Users_christophehumbert_Code_sdkgarmin_SlowMotionMoonWatch_bin_gen_006_B3943_00_source_Rez_mcgen_19_73_start:
+[ "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen" 20 12 ]
+            [ "_Users_christophehumbert_Code_sdkgarmin_SlowMotionMoonWatch_bin_gen_006_B3943_00_source_Rez_mcgen_19_73_start" "_Users_christophehumbert_Code_sdkgarmin_SlowMotionMoonWatch_bin_gen_006_B3943_00_source_Rez_mcgen_19_73_stop" ]
+            %rez_cmp_local_custom_drawable_20037624301671290860.1 = local;
+            %tmp.4 = getv ? :Background;
+            %tmp.1 = newc %tmp.4 ();
+            lputv %rez_cmp_local_custom_drawable_20037624301671290860.1 %tmp.1;
+[ "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen" 22 12 ]
+            [ "_Users_christophehumbert_Code_sdkgarmin_SlowMotionMoonWatch_bin_gen_006_B3943_00_source_Rez_mcgen_19_73_start" "_Users_christophehumbert_Code_sdkgarmin_SlowMotionMoonWatch_bin_gen_006_B3943_00_source_Rez_mcgen_19_73_stop" ]
+            %rez_cmp_local_text_TimeLabel.2 = local;
+            %tmp.7 = getm $.Toybox.WatchUi;
+            %tmp.8 = getv function ? %tmp.7 :Text;
+            %tmp.9 = newd 6;
+            %tmp.11 = const :identifier;
+            %tmp.12 = "TimeLabel";
+            %tmp.13 = dup %tmp.9;
+            %tmp.14 = aputv %tmp.13 %tmp.11 %tmp.12;
+            %tmp.16 = const :color;
+            %tmp.17 = getm $.Toybox.Graphics;
+            %tmp.18 = getv %tmp.17 :COLOR_BLUE;
+            %tmp.19 = dup %tmp.14;
+            %tmp.20 = aputv %tmp.19 %tmp.16 %tmp.18;
+            %tmp.22 = const :locX;
+            %tmp.23 = 416;
+            %tmp.24 = 0.5;
+            %tmp.25 = mul %tmp.23 %tmp.24;
+            %tmp.26 = dup %tmp.20;
+            %tmp.27 = aputv %tmp.26 %tmp.22 %tmp.25;
+            %tmp.29 = const :locY;
+            %tmp.30 = 416;
+            %tmp.31 = lgetv %dc;
+            %tmp.32 = getv function %tmp.31 :getFontHeight;
+            %tmp.33 = getm $.Toybox.Graphics;
+            %tmp.34 = getv %tmp.33 :FONT_LARGE;
+            %tmp.35 = invoke %tmp.31 %tmp.32(%tmp.34);
+            %tmp.36 = sub %tmp.30 %tmp.35;
+            %tmp.37 = 0.5;
+            %tmp.38 = mul %tmp.36 %tmp.37;
+            %tmp.39 = dup %tmp.27;
+            %tmp.40 = aputv %tmp.39 %tmp.29 %tmp.38;
+            %tmp.42 = const :justification;
+            %tmp.43 = getm $.Toybox.Graphics;
+            %tmp.44 = getv %tmp.43 :TEXT_JUSTIFY_CENTER;
+            %tmp.45 = dup %tmp.40;
+            %tmp.46 = aputv %tmp.45 %tmp.42 %tmp.44;
+            %tmp.48 = const :font;
+            %tmp.49 = getm $.Toybox.Graphics;
+            %tmp.50 = getv %tmp.49 :FONT_LARGE;
+            %tmp.51 = dup %tmp.46;
+            %tmp.52 = aputv %tmp.51 %tmp.48 %tmp.50;
+            %tmp.5 = newc %tmp.8 (%tmp.52);
+            lputv %rez_cmp_local_text_TimeLabel.2 %tmp.5;
+[ "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen" 24 12 ]
+            %tmp.53 = newa Array<WatchUi.Drawable> 2;
+            %tmp.55 = lgetv %rez_cmp_local_custom_drawable_20037624301671290860.1;
+            %tmp.56 = dup %tmp.53;
+            %tmp.57 = aputv %tmp.56 0 %tmp.55;
+            %tmp.59 = lgetv %rez_cmp_local_text_TimeLabel.2;
+            %tmp.60 = dup %tmp.57;
+            %tmp.61 = aputv %tmp.60 1 %tmp.59;
+            ret %tmp.61;
+_Users_christophehumbert_Code_sdkgarmin_SlowMotionMoonWatch_bin_gen_006_B3943_00_source_Rez_mcgen_19_73_stop:
+        }
+    }
+    [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 28; ]
+    module Menus {
+        [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 28; ]
+        <init> {
+        }
+    }
+    [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 31; ]
+    module Strings {
+        [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 31; ]
+        <init> {
+        }
+        [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 32; @position = 27; initialized = true; ]
+        var ColorLightGray as Symbol;
+        [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 33; @position = 27; initialized = true; ]
+        var ColorBlue as Symbol;
+        [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 34; @position = 27; initialized = true; ]
+        var ColorRed as Symbol;
+        [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 35; @position = 27; initialized = true; ]
+        var ForegroundColorTitle as Symbol;
+        [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 36; @position = 27; initialized = true; ]
+        var BackgroundColorTitle as Symbol;
+        [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 37; @position = 27; initialized = true; ]
+        var ColorDarkGray as Symbol;
+        [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 38; @position = 27; initialized = true; ]
+        var MilitaryFormatTitle as Symbol;
+        [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 39; @position = 27; initialized = true; ]
+        var ColorBlack as Symbol;
+        [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 40; @position = 27; initialized = true; ]
+        var ColorWhite as Symbol;
+        [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 41; @position = 27; initialized = true; ]
+        var AppName as Symbol;
+    }
+    [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 44; ]
+    module Styles {
+        [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 44; ]
+        <init> {
+        }
+        [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 45; ]
+        module prompt_font_enhanced_readability__body_with_title {
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 45; ]
+            <init> {
+            }
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 46; @position = 18; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 49; ]
+        module system_size__menu_header {
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 49; ]
+            <init> {
+            }
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 50; @position = 18; ]
+            const width as Number = 416;
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 51; @position = 18; ]
+            const height as Number = 130;
+        }
+        [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 54; ]
+        module system_loc__hint_button_left_bottom {
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 54; ]
+            <init> {
+            }
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 55; @position = 18; ]
+            const x as Number = 16;
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 56; @position = 18; ]
+            const y as Number = 275;
+        }
+        [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 59; ]
+        module prompt_font_enhanced_readability__body_no_title {
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 59; ]
+            <init> {
+            }
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 60; @position = 18; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 63; ]
+        module prompt_loc__body_no_title {
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 63; ]
+            <init> {
+            }
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 64; @position = 18; ]
+            const x as Number = 42;
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 65; @position = 18; ]
+            const y as Number = 42;
+        }
+        [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 68; ]
+        module system_icon_dark__about {
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 68; ]
+            <init> {
+            }
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 69; @position = 18; ]
+            const filename as String = "/Users/christophehumbert/Library/Application Support/Garmin/ConnectIQ/Devices/epix2/system_icon_dark__about.svg";
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 70; @position = 18; ]
+            const compress as String = "true";
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 71; @position = 18; ]
+            const dithering as String = "none";
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 72; @position = 18; ]
+            const automaticPalette as String = "true";
+        }
+        [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 75; ]
+        module system_icon_light__question {
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 75; ]
+            <init> {
+            }
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 76; @position = 18; ]
+            const filename as String = "/Users/christophehumbert/Library/Application Support/Garmin/ConnectIQ/Devices/epix2/system_icon_light__question.svg";
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 77; @position = 18; ]
+            const dithering as String = "none";
+        }
+        [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 80; ]
+        module system_loc__hint_button_left_top {
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 80; ]
+            <init> {
+            }
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 81; @position = 18; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 84; ]
+        module prompt_font__title {
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 84; ]
+            <init> {
+[ "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen" 85 18 ]
+                %tmp.62 = getm $.Toybox.Graphics;
+                %tmp.63 = getv %tmp.62 :TEXT_JUSTIFY_CENTER;
+                %tmp.64 = getm $.Toybox.Graphics;
+                %tmp.65 = getv %tmp.64 :TEXT_JUSTIFY_VCENTER;
+                %tmp.66 = bitor %tmp.63 %tmp.65;
+                putv self :justification %tmp.66;
+[ "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen" 86 18 ]
+                %tmp.67 = getm $.Toybox.Graphics;
+                %tmp.68 = getv %tmp.67 :FONT_XTINY;
+                putv self :font %tmp.68;
+            }
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 85; @position = 18; ]
+            const justification;
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 86; @position = 18; ]
+            const font;
+        }
+        [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 89; ]
+        module system_icon_dark__discard {
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 89; ]
+            <init> {
+            }
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 90; @position = 18; ]
+            const filename as String = "/Users/christophehumbert/Library/Application Support/Garmin/ConnectIQ/Devices/epix2/system_icon_dark__discard.svg";
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 91; @position = 18; ]
+            const compress as String = "true";
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 92; @position = 18; ]
+            const dithering as String = "none";
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 93; @position = 18; ]
+            const automaticPalette as String = "true";
+        }
+        [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 96; ]
+        module system_size__menu_item {
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 96; ]
+            <init> {
+            }
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 97; @position = 18; ]
+            const width as Number = 416;
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 98; @position = 18; ]
+            const height as Number = 109;
+        }
+        [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 101; ]
+        module system_color_dark__text {
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 101; ]
+            <init> {
+[ "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen" 103 18 ]
+                %tmp.69 = getm $.Toybox.Graphics;
+                %tmp.70 = getv %tmp.69 :COLOR_TRANSPARENT;
+                putv self :background %tmp.70;
+            }
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 102; @position = 18; ]
+            const color as Number = 0xFFFFFF;
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 103; @position = 18; ]
+            const background;
+        }
+        [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 106; ]
+        module system_icon_destructive__discard {
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 106; ]
+            <init> {
+            }
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 107; @position = 18; ]
+            const filename as String = "/Users/christophehumbert/Library/Application Support/Garmin/ConnectIQ/Devices/epix2/system_icon_destructive__discard.svg";
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 108; @position = 18; ]
+            const dithering as String = "none";
+        }
+        [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 111; ]
+        module system_icon_dark__hint_action_menu {
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 111; ]
+            <init> {
+            }
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 112; @position = 18; ]
+            const filename as String = "/Users/christophehumbert/Library/Application Support/Garmin/ConnectIQ/Devices/epix2/system_icon_dark__hint_button_right_top.svg";
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 113; @position = 18; ]
+            const dithering as String = "none";
+        }
+        [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 116; ]
+        module prompt_size__title {
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 116; ]
+            <init> {
+            }
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 117; @position = 18; ]
+            const width as Number = 333;
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 118; @position = 18; ]
+            const height as Number = 63;
+        }
+        [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 121; ]
+        module confirmation_font__body {
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 121; ]
+            <init> {
+[ "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen" 122 18 ]
+                %tmp.71 = getm $.Toybox.Graphics;
+                %tmp.72 = getv %tmp.71 :TEXT_JUSTIFY_CENTER;
+                %tmp.73 = getm $.Toybox.Graphics;
+                %tmp.74 = getv %tmp.73 :TEXT_JUSTIFY_VCENTER;
+                %tmp.75 = bitor %tmp.72 %tmp.74;
+                putv self :justification %tmp.75;
+[ "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen" 123 18 ]
+                %tmp.76 = getm $.Toybox.Graphics;
+                %tmp.77 = getv %tmp.76 :FONT_TINY;
+                putv self :font %tmp.77;
+            }
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 122; @position = 18; ]
+            const justification;
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 123; @position = 18; ]
+            const font;
+        }
+        [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 126; ]
+        module system_color_dark__background {
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 126; ]
+            <init> {
+            }
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 127; @position = 18; ]
+            const color as Number = 0x000000;
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 128; @position = 18; ]
+            const background as Number = 0x000000;
+        }
+        [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 131; ]
+        module system_icon_destructive__hint_button_left_top {
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 131; ]
+            <init> {
+            }
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 132; @position = 18; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 135; ]
+        module system_size__launch_icon {
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 135; ]
+            <init> {
+            }
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 136; @position = 18; ]
+            const scaleX as Number = 60;
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 137; @position = 18; ]
+            const scaleY as Number = 60;
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 138; @position = 18; ]
+            const scaleRelativeTo as String = "screen";
+        }
+        [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 141; ]
+        module confirmation_input__confirm {
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 141; ]
+            <init> {
+[ "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen" 142 18 ]
+                %tmp.78 = getm $.Toybox.WatchUi;
+                %tmp.79 = getv %tmp.78 :KEY_ENTER;
+                putv self :button %tmp.79;
+            }
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 142; @position = 18; ]
+            const button;
+        }
+        [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 145; ]
+        module prompt_font__body_with_title {
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 145; ]
+            <init> {
+[ "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen" 146 18 ]
+                %tmp.80 = getm $.Toybox.Graphics;
+                %tmp.81 = getv %tmp.80 :TEXT_JUSTIFY_CENTER;
+                putv self :justification %tmp.81;
+[ "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen" 147 18 ]
+                %tmp.82 = getm $.Toybox.Graphics;
+                %tmp.83 = getv %tmp.82 :FONT_TINY;
+                putv self :font %tmp.83;
+            }
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 146; @position = 18; ]
+            const justification;
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 147; @position = 18; ]
+            const font;
+        }
+        [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 150; ]
+        module confirmation_loc__body {
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 150; ]
+            <init> {
+            }
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 151; @position = 18; ]
+            const x as Number = 83;
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 152; @position = 18; ]
+            const y as Number = 83;
+        }
+        [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 155; ]
+        module system_icon_destructive__hint_button_left_bottom {
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 155; ]
+            <init> {
+            }
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 156; @position = 18; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 159; ]
+        module prompt_color_dark__background {
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 159; ]
+            <init> {
+            }
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 160; @position = 18; ]
+            const color as Number = 0x000000;
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 161; @position = 18; ]
+            const background as Number = 0x000000;
+        }
+        [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 164; ]
+        module system_loc__hint_action_menu {
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 164; ]
+            <init> {
+            }
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 165; @position = 18; ]
+            const x as Number = 360;
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 166; @position = 18; ]
+            const y as Number = 77;
+        }
+        [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 169; ]
+        module confirmation_icon__hint_confirm {
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 169; ]
+            <init> {
+            }
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 170; @position = 18; ]
+            const filename as String = "/Users/christophehumbert/Library/Application Support/Garmin/ConnectIQ/Devices/epix2/confirmation_icon__hint_completion.svg";
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 171; @position = 18; ]
+            const dithering as String = "none";
+        }
+        [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 174; ]
+        module system_loc__hint_button_left_middle {
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 174; ]
+            <init> {
+            }
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 175; @position = 18; ]
+            const x as Number = 4;
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 176; @position = 18; ]
+            const y as Number = 173;
+        }
+        [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 179; ]
+        module prompt_size__body_no_title {
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 179; ]
+            <init> {
+            }
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 180; @position = 18; ]
+            const width as Number = 333;
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 181; @position = 18; ]
+            const height as Number = 333;
+        }
+        [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 184; ]
+        module system_icon_light__hint_button_left_top {
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 184; ]
+            <init> {
+            }
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 185; @position = 18; ]
+            const filename as String = "/Users/christophehumbert/Library/Application Support/Garmin/ConnectIQ/Devices/epix2/system_icon_light__hint_button_left_top.svg";
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 186; @position = 18; ]
+            const dithering as String = "none";
+        }
+        [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 189; ]
+        module prompt_color_light__background {
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 189; ]
+            <init> {
+            }
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 190; @position = 18; ]
+            const color as Number = 0x000000;
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 191; @position = 18; ]
+            const background as Number = 0x000000;
+        }
+        [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 194; ]
+        module confirmation_input__delete {
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 194; ]
+            <init> {
+[ "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen" 195 18 ]
+                %tmp.84 = getm $.Toybox.WatchUi;
+                %tmp.85 = getv %tmp.84 :KEY_ENTER;
+                putv self :button %tmp.85;
+            }
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 195; @position = 18; ]
+            const button;
+        }
+        [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 198; ]
+        module system_icon_dark__hint_button_left_top {
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 198; ]
+            <init> {
+            }
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 199; @position = 18; ]
+            const filename as String = "/Users/christophehumbert/Library/Application Support/Garmin/ConnectIQ/Devices/epix2/system_icon_dark__hint_button_left_top.svg";
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 200; @position = 18; ]
+            const dithering as String = "none";
+        }
+        [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 203; ]
+        module system_input__action_menu {
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 203; ]
+            <init> {
+[ "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen" 204 18 ]
+                %tmp.86 = getm $.Toybox.WatchUi;
+                %tmp.87 = getv %tmp.86 :KEY_ENTER;
+                putv self :button %tmp.87;
+            }
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 204; @position = 18; ]
+            const button;
+        }
+        [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 207; ]
+        module system_icon_light__save {
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 207; ]
+            <init> {
+            }
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 208; @position = 18; ]
+            const filename as String = "/Users/christophehumbert/Library/Application Support/Garmin/ConnectIQ/Devices/epix2/system_icon_light__save.svg";
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 209; @position = 18; ]
+            const dithering as String = "none";
+        }
+        [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 212; ]
+        module prompt_color_light__body {
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 212; ]
+            <init> {
+[ "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen" 214 18 ]
+                %tmp.88 = getm $.Toybox.Graphics;
+                %tmp.89 = getv %tmp.88 :COLOR_TRANSPARENT;
+                putv self :background %tmp.89;
+            }
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 213; @position = 18; ]
+            const color as Number = 0xFFFFFF;
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 214; @position = 18; ]
+            const background;
+        }
+        [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 217; ]
+        module system_loc__subwindow {
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 217; ]
+            <init> {
+            }
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 218; @position = 18; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 221; ]
+        module system_icon_light__warning {
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 221; ]
+            <init> {
+            }
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 222; @position = 18; ]
+            const filename as String = "/Users/christophehumbert/Library/Application Support/Garmin/ConnectIQ/Devices/epix2/system_icon_light__warning.svg";
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 223; @position = 18; ]
+            const dithering as String = "none";
+        }
+        [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 226; ]
+        module confirmation_color_light__body {
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 226; ]
+            <init> {
+[ "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen" 228 18 ]
+                %tmp.90 = getm $.Toybox.Graphics;
+                %tmp.91 = getv %tmp.90 :COLOR_TRANSPARENT;
+                putv self :background %tmp.91;
+            }
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 227; @position = 18; ]
+            const color as Number = 0xFFFFFF;
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 228; @position = 18; ]
+            const background;
+        }
+        [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 231; ]
+        module activity_color_light__background {
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 231; ]
+            <init> {
+            }
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 232; @position = 18; ]
+            const color as Number = 0x000000;
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 233; @position = 18; ]
+            const background as Number = 0x000000;
+        }
+        [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 236; ]
+        module system_icon_positive__hint_button_right_top {
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 236; ]
+            <init> {
+            }
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 237; @position = 18; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 240; ]
+        module system_size__screen {
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 240; ]
+            <init> {
+            }
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 241; @position = 18; ]
+            const width as Number = 416;
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 242; @position = 18; ]
+            const height as Number = 416;
+        }
+        [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 245; ]
+        module system_icon_destructive__hint_button_right_bottom {
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 245; ]
+            <init> {
+            }
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 246; @position = 18; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 249; ]
+        module system_color_light__background {
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 249; ]
+            <init> {
+            }
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 250; @position = 18; ]
+            const color as Number = 0x000000;
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 251; @position = 18; ]
+            const background as Number = 0x000000;
+        }
+        [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 254; ]
+        module system_icon_destructive__hint_button_right_top {
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 254; ]
+            <init> {
+            }
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 255; @position = 18; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 258; ]
+        module confirmation_loc__hint_confirm {
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 258; ]
+            <init> {
+            }
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 259; @position = 18; ]
+            const x as Number = 338;
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 260; @position = 18; ]
+            const y as Number = 77;
+        }
+        [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 263; ]
+        module activity_color_dark__text {
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 263; ]
+            <init> {
+[ "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen" 265 18 ]
+                %tmp.92 = getm $.Toybox.Graphics;
+                %tmp.93 = getv %tmp.92 :COLOR_TRANSPARENT;
+                putv self :background %tmp.93;
+            }
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 264; @position = 18; ]
+            const color as Number = 0xFFFFFF;
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 265; @position = 18; ]
+            const background;
+        }
+        [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 268; ]
+        module confirmation_input__keep {
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 268; ]
+            <init> {
+[ "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen" 269 18 ]
+                %tmp.94 = getm $.Toybox.WatchUi;
+                %tmp.95 = getv %tmp.94 :KEY_DOWN;
+                putv self :button %tmp.95;
+            }
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 269; @position = 18; ]
+            const button;
+        }
+        [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 272; ]
+        module prompt_loc__body_with_title {
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 272; ]
+            <init> {
+            }
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 273; @position = 18; ]
+            const x as Number = 42;
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 274; @position = 18; ]
+            const y as Number = 125;
+        }
+        [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 277; ]
+        module system_icon_dark__search {
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 277; ]
+            <init> {
+            }
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 278; @position = 18; ]
+            const filename as String = "/Users/christophehumbert/Library/Application Support/Garmin/ConnectIQ/Devices/epix2/system_icon_dark__search.svg";
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 279; @position = 18; ]
+            const compress as String = "true";
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 280; @position = 18; ]
+            const dithering as String = "none";
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 281; @position = 18; ]
+            const automaticPalette as String = "true";
+        }
+        [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 284; ]
+        module activity_color_light__text {
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 284; ]
+            <init> {
+[ "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen" 286 18 ]
+                %tmp.96 = getm $.Toybox.Graphics;
+                %tmp.97 = getv %tmp.96 :COLOR_TRANSPARENT;
+                putv self :background %tmp.97;
+            }
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 285; @position = 18; ]
+            const color as Number = 0xFFFFFF;
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 286; @position = 18; ]
+            const background;
+        }
+        [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 289; ]
+        module confirmation_icon__hint_keep {
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 289; ]
+            <init> {
+            }
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 290; @position = 18; ]
+            const filename as String = "/Users/christophehumbert/Library/Application Support/Garmin/ConnectIQ/Devices/epix2/confirmation_icon__hint_keep.svg";
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 291; @position = 18; ]
+            const dithering as String = "none";
+        }
+        [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 294; ]
+        module system_icon_dark__save {
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 294; ]
+            <init> {
+            }
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 295; @position = 18; ]
+            const filename as String = "/Users/christophehumbert/Library/Application Support/Garmin/ConnectIQ/Devices/epix2/system_icon_dark__save.svg";
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 296; @position = 18; ]
+            const compress as String = "true";
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 297; @position = 18; ]
+            const dithering as String = "none";
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 298; @position = 18; ]
+            const automaticPalette as String = "true";
+        }
+        [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 301; ]
+        module system_icon_destructive__hint_button_left_middle {
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 301; ]
+            <init> {
+            }
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 302; @position = 18; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 305; ]
+        module system_icon_light__search {
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 305; ]
+            <init> {
+            }
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 306; @position = 18; ]
+            const filename as String = "/Users/christophehumbert/Library/Application Support/Garmin/ConnectIQ/Devices/epix2/system_icon_light__search.svg";
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 307; @position = 18; ]
+            const dithering as String = "none";
+        }
+        [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 310; ]
+        module system_icon_dark__hint_button_left_bottom {
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 310; ]
+            <init> {
+            }
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 311; @position = 18; ]
+            const filename as String = "/Users/christophehumbert/Library/Application Support/Garmin/ConnectIQ/Devices/epix2/system_icon_dark__hint_button_left_bottom.svg";
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 312; @position = 18; ]
+            const dithering as String = "none";
+        }
+        [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 315; ]
+        module system_icon_positive__hint_button_left_top {
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 315; ]
+            <init> {
+            }
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 316; @position = 18; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 319; ]
+        module system_loc__hint_button_right_bottom {
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 319; ]
+            <init> {
+            }
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 320; @position = 18; ]
+            const x as Number = 360;
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 321; @position = 18; ]
+            const y as Number = 275;
+        }
+        [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 324; ]
+        module confirmation_color_dark__body {
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 324; ]
+            <init> {
+[ "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen" 326 18 ]
+                %tmp.98 = getm $.Toybox.Graphics;
+                %tmp.99 = getv %tmp.98 :COLOR_TRANSPARENT;
+                putv self :background %tmp.99;
+            }
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 325; @position = 18; ]
+            const color as Number = 0xFFFFFF;
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 326; @position = 18; ]
+            const background;
+        }
+        [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 329; ]
+        module prompt_color_dark__title {
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 329; ]
+            <init> {
+[ "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen" 331 18 ]
+                %tmp.100 = getm $.Toybox.Graphics;
+                %tmp.101 = getv %tmp.100 :COLOR_TRANSPARENT;
+                putv self :background %tmp.101;
+            }
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 330; @position = 18; ]
+            const color as Number = 0xFFFFFF;
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 331; @position = 18; ]
+            const background;
+        }
+        [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 334; ]
+        module system_icon_destructive__cancel {
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 334; ]
+            <init> {
+            }
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 335; @position = 18; ]
+            const filename as String = "/Users/christophehumbert/Library/Application Support/Garmin/ConnectIQ/Devices/epix2/system_icon_destructive__cancel.svg";
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 336; @position = 18; ]
+            const dithering as String = "none";
+        }
+        [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 339; ]
+        module system_icon_light__hint_button_right_bottom {
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 339; ]
+            <init> {
+            }
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 340; @position = 18; ]
+            const filename as String = "/Users/christophehumbert/Library/Application Support/Garmin/ConnectIQ/Devices/epix2/system_icon_light__hint_button_right_bottom.svg";
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 341; @position = 18; ]
+            const dithering as String = "none";
+        }
+        [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 344; ]
+        module prompt_loc__title {
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 344; ]
+            <init> {
+            }
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 345; @position = 18; ]
+            const x as Number = 42;
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 346; @position = 18; ]
+            const y as Number = 30;
+        }
+        [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 349; ]
+        module confirmation_font_enhanced_readability__body {
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 349; ]
+            <init> {
+            }
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 350; @position = 18; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 353; ]
+        module prompt_color_light__title {
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 353; ]
+            <init> {
+[ "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen" 355 18 ]
+                %tmp.102 = getm $.Toybox.Graphics;
+                %tmp.103 = getv %tmp.102 :COLOR_TRANSPARENT;
+                putv self :background %tmp.103;
+            }
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 354; @position = 18; ]
+            const color as Number = 0xFFFFFF;
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 355; @position = 18; ]
+            const background;
+        }
+        [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 358; ]
+        module system_icon_dark__hint_button_right_top {
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 358; ]
+            <init> {
+            }
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 359; @position = 18; ]
+            const filename as String = "/Users/christophehumbert/Library/Application Support/Garmin/ConnectIQ/Devices/epix2/system_icon_dark__hint_button_right_top.svg";
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 360; @position = 18; ]
+            const dithering as String = "none";
+        }
+        [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 363; ]
+        module system_icon_dark__hint_button_left_middle {
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 363; ]
+            <init> {
+            }
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 364; @position = 18; ]
+            const filename as String = "/Users/christophehumbert/Library/Application Support/Garmin/ConnectIQ/Devices/epix2/system_icon_dark__hint_button_left_middle.svg";
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 365; @position = 18; ]
+            const dithering as String = "none";
+        }
+        [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 368; ]
+        module system_icon_light__cancel {
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 368; ]
+            <init> {
+            }
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 369; @position = 18; ]
+            const filename as String = "/Users/christophehumbert/Library/Application Support/Garmin/ConnectIQ/Devices/epix2/system_icon_light__cancel.svg";
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 370; @position = 18; ]
+            const dithering as String = "none";
+        }
+        [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 373; ]
+        module system_icon_light__about {
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 373; ]
+            <init> {
+            }
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 374; @position = 18; ]
+            const filename as String = "/Users/christophehumbert/Library/Application Support/Garmin/ConnectIQ/Devices/epix2/system_icon_light__about.svg";
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 375; @position = 18; ]
+            const dithering as String = "none";
+        }
+        [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 378; ]
+        module system_size__toast_icon {
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 378; ]
+            <init> {
+            }
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 379; @position = 18; ]
+            const scaleX as Number = 40;
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 380; @position = 18; ]
+            const scaleY as Number = 40;
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 381; @position = 18; ]
+            const scaleRelativeTo as String = "screen";
+        }
+        [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 384; ]
+        module system_icon_dark__hint_button_right_middle {
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 384; ]
+            <init> {
+            }
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 385; @position = 18; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 388; ]
+        module confirmation_icon__hint_reject {
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 388; ]
+            <init> {
+            }
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 389; @position = 18; ]
+            const filename as String = "/Users/christophehumbert/Library/Application Support/Garmin/ConnectIQ/Devices/epix2/confirmation_icon__hint_reject.svg";
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 390; @position = 18; ]
+            const dithering as String = "none";
+        }
+        [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 393; ]
+        module system_icon_light__hint_action_menu {
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 393; ]
+            <init> {
+            }
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 394; @position = 18; ]
+            const filename as String = "/Users/christophehumbert/Library/Application Support/Garmin/ConnectIQ/Devices/epix2/system_icon_light__hint_button_right_top.svg";
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 395; @position = 18; ]
+            const dithering as String = "none";
+        }
+        [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 398; ]
+        module system_icon_light__hint_button_right_middle {
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 398; ]
+            <init> {
+            }
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 399; @position = 18; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 402; ]
+        module system_icon_destructive__hint_button_right_middle {
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 402; ]
+            <init> {
+            }
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 403; @position = 18; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 406; ]
+        module confirmation_loc__hint_reject {
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 406; ]
+            <init> {
+            }
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 407; @position = 18; ]
+            const x as Number = 16;
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 408; @position = 18; ]
+            const y as Number = 275;
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 409; @position = 18; ]
+            const horizontalJustification as String = "left";
+        }
+        [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 412; ]
+        module activity_color_dark__background {
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 412; ]
+            <init> {
+            }
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 413; @position = 18; ]
+            const color as Number = 0x000000;
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 414; @position = 18; ]
+            const background as Number = 0x000000;
+        }
+        [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 417; ]
+        module system_icon_light__hint_button_left_bottom {
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 417; ]
+            <init> {
+            }
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 418; @position = 18; ]
+            const filename as String = "/Users/christophehumbert/Library/Application Support/Garmin/ConnectIQ/Devices/epix2/system_icon_light__hint_button_left_bottom.svg";
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 419; @position = 18; ]
+            const dithering as String = "none";
+        }
+        [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 422; ]
+        module system_icon_positive__hint_button_left_middle {
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 422; ]
+            <init> {
+            }
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 423; @position = 18; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 426; ]
+        module system_size__menu_icon {
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 426; ]
+            <init> {
+            }
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 427; @position = 18; ]
+            const scaleX as Number = 60;
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 428; @position = 18; ]
+            const scaleY as Number = 60;
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 429; @position = 18; ]
+            const scaleRelativeTo as String = "screen";
+        }
+        [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 432; ]
+        module system_icon_destructive__warning {
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 432; ]
+            <init> {
+            }
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 433; @position = 18; ]
+            const filename as String = "/Users/christophehumbert/Library/Application Support/Garmin/ConnectIQ/Devices/epix2/system_icon_destructive__warning.svg";
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 434; @position = 18; ]
+            const dithering as String = "none";
+        }
+        [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 437; ]
+        module system_loc__hint_button_right_middle {
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 437; ]
+            <init> {
+            }
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 438; @position = 18; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 441; ]
+        module system_icon_dark__cancel {
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 441; ]
+            <init> {
+            }
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 442; @position = 18; ]
+            const filename as String = "/Users/christophehumbert/Library/Application Support/Garmin/ConnectIQ/Devices/epix2/system_icon_dark__cancel.svg";
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 443; @position = 18; ]
+            const compress as String = "true";
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 444; @position = 18; ]
+            const dithering as String = "none";
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 445; @position = 18; ]
+            const automaticPalette as String = "true";
+        }
+        [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 448; ]
+        module prompt_size__body_with_title {
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 448; ]
+            <init> {
+            }
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 449; @position = 18; ]
+            const width as Number = 333;
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 450; @position = 18; ]
+            const height as Number = 250;
+        }
+        [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 453; ]
+        module system_loc__hint_button_right_top {
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 453; ]
+            <init> {
+            }
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 454; @position = 18; ]
+            const x as Number = 360;
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 455; @position = 18; ]
+            const y as Number = 77;
+        }
+        [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 458; ]
+        module system_color_light__text {
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 458; ]
+            <init> {
+[ "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen" 460 18 ]
+                %tmp.104 = getm $.Toybox.Graphics;
+                %tmp.105 = getv %tmp.104 :COLOR_TRANSPARENT;
+                putv self :background %tmp.105;
+            }
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 459; @position = 18; ]
+            const color as Number = 0xFFFFFF;
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 460; @position = 18; ]
+            const background;
+        }
+        [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 463; ]
+        module system_icon_light__check {
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 463; ]
+            <init> {
+            }
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 464; @position = 18; ]
+            const filename as String = "/Users/christophehumbert/Library/Application Support/Garmin/ConnectIQ/Devices/epix2/system_icon_light__check.svg";
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 465; @position = 18; ]
+            const dithering as String = "none";
+        }
+        [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 468; ]
+        module confirmation_input__reject {
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 468; ]
+            <init> {
+[ "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen" 469 18 ]
+                %tmp.106 = getm $.Toybox.WatchUi;
+                %tmp.107 = getv %tmp.106 :KEY_DOWN;
+                putv self :button %tmp.107;
+            }
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 469; @position = 18; ]
+            const button;
+        }
+        [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 472; ]
+        module system_icon_light__revert {
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 472; ]
+            <init> {
+            }
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 473; @position = 18; ]
+            const filename as String = "/Users/christophehumbert/Library/Application Support/Garmin/ConnectIQ/Devices/epix2/system_icon_light__revert.svg";
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 474; @position = 18; ]
+            const dithering as String = "none";
+        }
+        [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 477; ]
+        module system_size__subwindow {
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 477; ]
+            <init> {
+            }
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 478; @position = 18; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 481; ]
+        module system_icon_positive__hint_button_left_bottom {
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 481; ]
+            <init> {
+            }
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 482; @position = 18; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 485; ]
+        module system_icon_dark__check {
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 485; ]
+            <init> {
+            }
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 486; @position = 18; ]
+            const filename as String = "/Users/christophehumbert/Library/Application Support/Garmin/ConnectIQ/Devices/epix2/system_icon_dark__check.svg";
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 487; @position = 18; ]
+            const compress as String = "true";
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 488; @position = 18; ]
+            const dithering as String = "none";
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 489; @position = 18; ]
+            const automaticPalette as String = "true";
+        }
+        [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 492; ]
+        module confirmation_loc__hint_keep {
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 492; ]
+            <init> {
+            }
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 493; @position = 18; ]
+            const x as Number = 16;
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 494; @position = 18; ]
+            const y as Number = 275;
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 495; @position = 18; ]
+            const horizontalJustification as String = "left";
+        }
+        [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 498; ]
+        module confirmation_loc__hint_delete {
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 498; ]
+            <init> {
+            }
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 499; @position = 18; ]
+            const x as Number = 338;
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 500; @position = 18; ]
+            const y as Number = 77;
+        }
+        [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 503; ]
+        module system_icon_positive__hint_button_right_middle {
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 503; ]
+            <init> {
+            }
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 504; @position = 18; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 507; ]
+        module system_icon_light__hint_button_left_middle {
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 507; ]
+            <init> {
+            }
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 508; @position = 18; ]
+            const filename as String = "/Users/christophehumbert/Library/Application Support/Garmin/ConnectIQ/Devices/epix2/system_icon_light__hint_button_left_middle.svg";
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 509; @position = 18; ]
+            const dithering as String = "none";
+        }
+        [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 512; ]
+        module system_icon_dark__hint_button_right_bottom {
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 512; ]
+            <init> {
+            }
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 513; @position = 18; ]
+            const filename as String = "/Users/christophehumbert/Library/Application Support/Garmin/ConnectIQ/Devices/epix2/system_icon_dark__hint_button_right_bottom.svg";
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 514; @position = 18; ]
+            const dithering as String = "none";
+        }
+        [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 517; ]
+        module system_icon_positive__hint_button_right_bottom {
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 517; ]
+            <init> {
+            }
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 518; @position = 18; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 521; ]
+        module system_icon_dark__revert {
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 521; ]
+            <init> {
+            }
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 522; @position = 18; ]
+            const filename as String = "/Users/christophehumbert/Library/Application Support/Garmin/ConnectIQ/Devices/epix2/system_icon_dark__revert.svg";
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 523; @position = 18; ]
+            const compress as String = "true";
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 524; @position = 18; ]
+            const dithering as String = "none";
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 525; @position = 18; ]
+            const automaticPalette as String = "true";
+        }
+        [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 528; ]
+        module system_icon_dark__question {
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 528; ]
+            <init> {
+            }
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 529; @position = 18; ]
+            const filename as String = "/Users/christophehumbert/Library/Application Support/Garmin/ConnectIQ/Devices/epix2/system_icon_dark__question.svg";
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 530; @position = 18; ]
+            const compress as String = "true";
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 531; @position = 18; ]
+            const dithering as String = "none";
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 532; @position = 18; ]
+            const automaticPalette as String = "true";
+        }
+        [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 535; ]
+        module system_icon_light__discard {
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 535; ]
+            <init> {
+            }
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 536; @position = 18; ]
+            const filename as String = "/Users/christophehumbert/Library/Application Support/Garmin/ConnectIQ/Devices/epix2/system_icon_light__discard.svg";
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 537; @position = 18; ]
+            const dithering as String = "none";
+        }
+        [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 540; ]
+        module device_info {
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 540; ]
+            <init> {
+[ "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen" 542 18 ]
+                %tmp.108 = getm $.Toybox.System;
+                %tmp.109 = getv %tmp.108 :SCREEN_SHAPE_ROUND;
+                putv self :screenShape %tmp.109;
+            }
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 541; @position = 18; ]
+            const screenWidth as Number = 416;
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 542; @position = 18; ]
+            const screenShape;
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 543; @position = 18; ]
+            const hasNightMode as Boolean = false;
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 544; @position = 18; ]
+            const screenHeight as Number = 416;
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 545; @position = 18; ]
+            const hasTouchScreen as Boolean = true;
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 546; @position = 18; ]
+            const hasEnhancedReadabilityMode as Boolean = false;
+        }
+        [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 549; ]
+        module prompt_font__body_no_title {
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 549; ]
+            <init> {
+[ "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen" 550 18 ]
+                %tmp.110 = getm $.Toybox.Graphics;
+                %tmp.111 = getv %tmp.110 :TEXT_JUSTIFY_CENTER;
+                %tmp.112 = getm $.Toybox.Graphics;
+                %tmp.113 = getv %tmp.112 :TEXT_JUSTIFY_VCENTER;
+                %tmp.114 = bitor %tmp.111 %tmp.113;
+                putv self :justification %tmp.114;
+[ "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen" 551 18 ]
+                %tmp.115 = getm $.Toybox.Graphics;
+                %tmp.116 = getv %tmp.115 :FONT_TINY;
+                putv self :font %tmp.116;
+            }
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 550; @position = 18; ]
+            const justification;
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 551; @position = 18; ]
+            const font;
+        }
+        [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 554; ]
+        module prompt_size__title_icon {
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 554; ]
+            <init> {
+            }
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 555; @position = 18; ]
+            const scaleX as Float = 0.15;
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 556; @position = 18; ]
+            const scaleRelativeTo as String = "screen";
+        }
+        [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 559; ]
+        module system_icon_dark__warning {
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 559; ]
+            <init> {
+            }
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 560; @position = 18; ]
+            const filename as String = "/Users/christophehumbert/Library/Application Support/Garmin/ConnectIQ/Devices/epix2/system_icon_dark__warning.svg";
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 561; @position = 18; ]
+            const compress as String = "true";
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 562; @position = 18; ]
+            const dithering as String = "none";
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 563; @position = 18; ]
+            const automaticPalette as String = "true";
+        }
+        [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 566; ]
+        module prompt_loc__title_icon {
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 566; ]
+            <init> {
+            }
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 567; @position = 18; ]
+            const x as Number = 208;
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 568; @position = 18; ]
+            const y as Number = 62;
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 569; @position = 18; ]
+            const horizontalJustification as String = "center";
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 570; @position = 18; ]
+            const verticalJustification as String = "center";
+        }
+        [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 573; ]
+        module prompt_font_enhanced_readability__title {
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 573; ]
+            <init> {
+            }
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 574; @position = 18; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 577; ]
+        module prompt_color_dark__body {
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 577; ]
+            <init> {
+[ "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen" 579 18 ]
+                %tmp.117 = getm $.Toybox.Graphics;
+                %tmp.118 = getv %tmp.117 :COLOR_TRANSPARENT;
+                putv self :background %tmp.118;
+            }
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 578; @position = 18; ]
+            const color as Number = 0xFFFFFF;
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 579; @position = 18; ]
+            const background;
+        }
+        [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 582; ]
+        module confirmation_icon__hint_delete {
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 582; ]
+            <init> {
+            }
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 583; @position = 18; ]
+            const filename as String = "/Users/christophehumbert/Library/Application Support/Garmin/ConnectIQ/Devices/epix2/confirmation_icon__hint_delete.svg";
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 584; @position = 18; ]
+            const dithering as String = "none";
+        }
+        [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 587; ]
+        module system_icon_light__hint_button_right_top {
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 587; ]
+            <init> {
+            }
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 588; @position = 18; ]
+            const filename as String = "/Users/christophehumbert/Library/Application Support/Garmin/ConnectIQ/Devices/epix2/system_icon_light__hint_button_right_top.svg";
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 589; @position = 18; ]
+            const dithering as String = "none";
+        }
+        [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 592; ]
+        module confirmation_size__body {
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 592; ]
+            <init> {
+            }
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 593; @position = 18; ]
+            const width as Number = 250;
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 594; @position = 18; ]
+            const height as Number = 250;
+        }
+        [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 597; ]
+        module system_icon_positive__check {
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 597; ]
+            <init> {
+            }
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 598; @position = 18; ]
+            const filename as String = "/Users/christophehumbert/Library/Application Support/Garmin/ConnectIQ/Devices/epix2/system_icon_positive__check.svg";
+            [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 599; @position = 18; ]
+            const dithering as String = "none";
+        }
+    }
+}
+[ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen"; @line = 1; ]
+<init> {
+}
