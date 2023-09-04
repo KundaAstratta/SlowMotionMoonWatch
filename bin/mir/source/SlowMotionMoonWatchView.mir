@@ -12,24 +12,42 @@ import Toybox.WatchUi;
 class SlowMotionMoonWatchView extends WatchUi.WatchFace{
     [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/source/SlowMotionMoonWatchView.mc"; @line = 7; ]
     <init> {
+[ "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/source/SlowMotionMoonWatchView.mc" 11 8 ]
+        %tmp.2 = getv ? :Math;
+        %tmp.3 = getv %tmp.2 :PI;
+        %tmp.4 = 2;
+        %tmp.5 = mul %tmp.3 %tmp.4;
+        putv self :TWO_PI %tmp.5;
+[ "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/source/SlowMotionMoonWatchView.mc" 13 8 ]
+        %tmp.7 = getv ? :Math;
+        %tmp.8 = getv %tmp.7 :PI;
+        %tmp.9 = 2.0;
+        %tmp.10 = div %tmp.8 %tmp.9;
+        putv self :ANGLE_ADJUST %tmp.10;
     }
     [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/source/SlowMotionMoonWatchView.mc"; @line = 7; ]
     static
     <init> {
     }
-    [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/source/SlowMotionMoonWatchView.mc"; @line = 9; ]
+    [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/source/SlowMotionMoonWatchView.mc"; @line = 9; @position = 8; ]
+    var isAwake;
+    [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/source/SlowMotionMoonWatchView.mc"; @line = 11; @position = 8; ]
+    var TWO_PI;
+    [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/source/SlowMotionMoonWatchView.mc"; @line = 13; @position = 8; ]
+    var ANGLE_ADJUST;
+    [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/source/SlowMotionMoonWatchView.mc"; @line = 15; ]
     function initialize() as Void {
-_Users_christophehumbert_Code_sdkgarmin_SlowMotionMoonWatch_source_SlowMotionMoonWatchView_mc_9_26_start:
-[ "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/source/SlowMotionMoonWatchView.mc" 10 8 ]
+_Users_christophehumbert_Code_sdkgarmin_SlowMotionMoonWatch_source_SlowMotionMoonWatchView_mc_15_26_start:
+[ "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/source/SlowMotionMoonWatchView.mc" 16 8 ]
         %tmp.2 = getv ? :WatchFace;
         %tmp.3 = getv function %tmp.2 :initialize;
         invoke %tmp.2 %tmp.3();
-_Users_christophehumbert_Code_sdkgarmin_SlowMotionMoonWatch_source_SlowMotionMoonWatchView_mc_9_26_stop:
+_Users_christophehumbert_Code_sdkgarmin_SlowMotionMoonWatch_source_SlowMotionMoonWatchView_mc_15_26_stop:
     }
-    [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/source/SlowMotionMoonWatchView.mc"; @line = 14; ]
+    [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/source/SlowMotionMoonWatchView.mc"; @line = 20; ]
     function onLayout(dc as Dc) as Void {
-_Users_christophehumbert_Code_sdkgarmin_SlowMotionMoonWatch_source_SlowMotionMoonWatchView_mc_14_40_start:
-[ "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/source/SlowMotionMoonWatchView.mc" 15 8 ]
+_Users_christophehumbert_Code_sdkgarmin_SlowMotionMoonWatch_source_SlowMotionMoonWatchView_mc_20_40_start:
+[ "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/source/SlowMotionMoonWatchView.mc" 21 8 ]
         %tmp.1 = self;
         %tmp.2 = getv function %tmp.1 :setLayout;
         %tmp.4 = getv ? :Rez;
@@ -38,145 +56,427 @@ _Users_christophehumbert_Code_sdkgarmin_SlowMotionMoonWatch_source_SlowMotionMoo
         %tmp.8 = lgetv %dc;
         %tmp.9 = invoke %tmp.5 %tmp.6(%tmp.8);
         invoke %tmp.1 %tmp.2(%tmp.9);
-_Users_christophehumbert_Code_sdkgarmin_SlowMotionMoonWatch_source_SlowMotionMoonWatchView_mc_14_40_stop:
+_Users_christophehumbert_Code_sdkgarmin_SlowMotionMoonWatch_source_SlowMotionMoonWatchView_mc_20_40_stop:
     }
-    [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/source/SlowMotionMoonWatchView.mc"; @line = 21; ]
+    [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/source/SlowMotionMoonWatchView.mc"; @line = 27; ]
     function onShow() as Void {
     }
-    [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/source/SlowMotionMoonWatchView.mc"; @line = 25; ]
+    [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/source/SlowMotionMoonWatchView.mc"; @line = 31; ]
     function onUpdate(dc as Dc) as Void {
-_Users_christophehumbert_Code_sdkgarmin_SlowMotionMoonWatch_source_SlowMotionMoonWatchView_mc_25_40_start:
-[ "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/source/SlowMotionMoonWatchView.mc" 27 8 ]
-        [ "_Users_christophehumbert_Code_sdkgarmin_SlowMotionMoonWatch_source_SlowMotionMoonWatchView_mc_25_40_start" "_Users_christophehumbert_Code_sdkgarmin_SlowMotionMoonWatch_source_SlowMotionMoonWatchView_mc_25_40_stop" ]
-        %timeFormat.1 = local;
-        %tmp.1 = "$1$:$2$";
-        lputv %timeFormat.1 %tmp.1;
-[ "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/source/SlowMotionMoonWatchView.mc" 28 8 ]
-        [ "_Users_christophehumbert_Code_sdkgarmin_SlowMotionMoonWatch_source_SlowMotionMoonWatchView_mc_25_40_start" "_Users_christophehumbert_Code_sdkgarmin_SlowMotionMoonWatch_source_SlowMotionMoonWatchView_mc_25_40_stop" ]
-        %clockTime.2 = local;
-        %tmp.2 = getm $.Toybox.System;
-        %tmp.3 = getv function %tmp.2 :getClockTime;
-        %tmp.4 = invoke %tmp.2 %tmp.3();
-        lputv %clockTime.2 %tmp.4;
-[ "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/source/SlowMotionMoonWatchView.mc" 29 8 ]
-        [ "_Users_christophehumbert_Code_sdkgarmin_SlowMotionMoonWatch_source_SlowMotionMoonWatchView_mc_25_40_start" "_Users_christophehumbert_Code_sdkgarmin_SlowMotionMoonWatch_source_SlowMotionMoonWatchView_mc_25_40_stop" ]
-        %hours.3 = local;
-        %tmp.5 = lgetv %clockTime.2;
-        %tmp.6 = getv %tmp.5 :hour;
-        lputv %hours.3 %tmp.6;
-[ "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/source/SlowMotionMoonWatchView.mc" 30 8 ]
-_Users_christophehumbert_Code_sdkgarmin_SlowMotionMoonWatch_source_SlowMotionMoonWatchView_mc_30_8_if_stmt:
-        %tmp.7 = getm $.Toybox.System;
-        %tmp.8 = getv function %tmp.7 :getDeviceSettings;
-        %tmp.9 = invoke %tmp.7 %tmp.8();
-        %tmp.10 = getv %tmp.9 :is24Hour;
-        %tmp.11 = not %tmp.10;
-        bf %tmp.11 @_Users_christophehumbert_Code_sdkgarmin_SlowMotionMoonWatch_source_SlowMotionMoonWatchView_mc_30_8_if_false;
-_Users_christophehumbert_Code_sdkgarmin_SlowMotionMoonWatch_source_SlowMotionMoonWatchView_mc_30_8_if_true:
-_Users_christophehumbert_Code_sdkgarmin_SlowMotionMoonWatch_source_SlowMotionMoonWatchView_mc_30_50_start:
-[ "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/source/SlowMotionMoonWatchView.mc" 31 12 ]
-_Users_christophehumbert_Code_sdkgarmin_SlowMotionMoonWatch_source_SlowMotionMoonWatchView_mc_31_12_if_stmt:
-        %tmp.13 = lgetv %hours.3;
-        %tmp.14 = 12;
-        %tmp.15 = gt %tmp.13 %tmp.14;
-        bf %tmp.15 @_Users_christophehumbert_Code_sdkgarmin_SlowMotionMoonWatch_source_SlowMotionMoonWatchView_mc_31_12_if_end;
-_Users_christophehumbert_Code_sdkgarmin_SlowMotionMoonWatch_source_SlowMotionMoonWatchView_mc_31_12_if_true:
-_Users_christophehumbert_Code_sdkgarmin_SlowMotionMoonWatch_source_SlowMotionMoonWatchView_mc_31_28_start:
-[ "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/source/SlowMotionMoonWatchView.mc" 32 16 ]
-        %tmp.17 = lgetv %hours.3;
-        %tmp.18 = 12;
-        %tmp.19 = sub %tmp.17 %tmp.18;
-        lputv %hours.3 %tmp.19;
-_Users_christophehumbert_Code_sdkgarmin_SlowMotionMoonWatch_source_SlowMotionMoonWatchView_mc_31_28_stop:
-        goto @_Users_christophehumbert_Code_sdkgarmin_SlowMotionMoonWatch_source_SlowMotionMoonWatchView_mc_31_12_if_end;
-_Users_christophehumbert_Code_sdkgarmin_SlowMotionMoonWatch_source_SlowMotionMoonWatchView_mc_31_12_if_end:
-_Users_christophehumbert_Code_sdkgarmin_SlowMotionMoonWatch_source_SlowMotionMoonWatchView_mc_30_50_stop:
-        goto @_Users_christophehumbert_Code_sdkgarmin_SlowMotionMoonWatch_source_SlowMotionMoonWatchView_mc_30_8_if_end;
-_Users_christophehumbert_Code_sdkgarmin_SlowMotionMoonWatch_source_SlowMotionMoonWatchView_mc_30_8_if_false:
-_Users_christophehumbert_Code_sdkgarmin_SlowMotionMoonWatch_source_SlowMotionMoonWatchView_mc_34_15_start:
-[ "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/source/SlowMotionMoonWatchView.mc" 35 12 ]
-_Users_christophehumbert_Code_sdkgarmin_SlowMotionMoonWatch_source_SlowMotionMoonWatchView_mc_35_12_if_stmt:
-        %tmp.20 = self;
-        %tmp.21 = getv function %tmp.20 :getApp;
-        %tmp.22 = invoke %tmp.20 %tmp.21();
-        %tmp.23 = getv function %tmp.22 :getProperty;
-        %tmp.24 = "UseMilitaryFormat";
-        %tmp.25 = invoke %tmp.22 %tmp.23(%tmp.24);
-        bf %tmp.25 @_Users_christophehumbert_Code_sdkgarmin_SlowMotionMoonWatch_source_SlowMotionMoonWatchView_mc_35_12_if_end;
-_Users_christophehumbert_Code_sdkgarmin_SlowMotionMoonWatch_source_SlowMotionMoonWatchView_mc_35_12_if_true:
-_Users_christophehumbert_Code_sdkgarmin_SlowMotionMoonWatch_source_SlowMotionMoonWatchView_mc_35_59_start:
-[ "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/source/SlowMotionMoonWatchView.mc" 36 16 ]
-        %tmp.26 = "$1$$2$";
-        lputv %timeFormat.1 %tmp.26;
-[ "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/source/SlowMotionMoonWatchView.mc" 37 16 ]
-        %tmp.27 = lgetv %hours.3;
-        %tmp.28 = getv function %tmp.27 :format;
-        %tmp.29 = "%02d";
-        %tmp.30 = invoke %tmp.27 %tmp.28(%tmp.29);
-        lputv %hours.3 %tmp.30;
-_Users_christophehumbert_Code_sdkgarmin_SlowMotionMoonWatch_source_SlowMotionMoonWatchView_mc_35_59_stop:
-        goto @_Users_christophehumbert_Code_sdkgarmin_SlowMotionMoonWatch_source_SlowMotionMoonWatchView_mc_35_12_if_end;
-_Users_christophehumbert_Code_sdkgarmin_SlowMotionMoonWatch_source_SlowMotionMoonWatchView_mc_35_12_if_end:
-_Users_christophehumbert_Code_sdkgarmin_SlowMotionMoonWatch_source_SlowMotionMoonWatchView_mc_34_15_stop:
-_Users_christophehumbert_Code_sdkgarmin_SlowMotionMoonWatch_source_SlowMotionMoonWatchView_mc_30_8_if_end:
+_Users_christophehumbert_Code_sdkgarmin_SlowMotionMoonWatch_source_SlowMotionMoonWatchView_mc_31_40_start:
+[ "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/source/SlowMotionMoonWatchView.mc" 33 8 ]
+        [ "_Users_christophehumbert_Code_sdkgarmin_SlowMotionMoonWatch_source_SlowMotionMoonWatchView_mc_31_40_start" "_Users_christophehumbert_Code_sdkgarmin_SlowMotionMoonWatch_source_SlowMotionMoonWatchView_mc_31_40_stop" ]
+        %clockTime.1 = local;
+        %tmp.1 = getm $.Toybox.System;
+        %tmp.2 = getv function %tmp.1 :getClockTime;
+        %tmp.3 = invoke %tmp.1 %tmp.2();
+        lputv %clockTime.1 %tmp.3;
+[ "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/source/SlowMotionMoonWatchView.mc" 34 8 ]
+        [ "_Users_christophehumbert_Code_sdkgarmin_SlowMotionMoonWatch_source_SlowMotionMoonWatchView_mc_31_40_start" "_Users_christophehumbert_Code_sdkgarmin_SlowMotionMoonWatch_source_SlowMotionMoonWatchView_mc_31_40_stop" ]
+        %hours.2 = local;
+        %tmp.4 = lgetv %clockTime.1;
+        %tmp.5 = getv %tmp.4 :hour;
+        lputv %hours.2 %tmp.5;
+[ "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/source/SlowMotionMoonWatchView.mc" 35 8 ]
+        [ "_Users_christophehumbert_Code_sdkgarmin_SlowMotionMoonWatch_source_SlowMotionMoonWatchView_mc_31_40_start" "_Users_christophehumbert_Code_sdkgarmin_SlowMotionMoonWatch_source_SlowMotionMoonWatchView_mc_31_40_stop" ]
+        %min.3 = local;
+        %tmp.6 = lgetv %clockTime.1;
+        %tmp.7 = getv %tmp.6 :min;
+        lputv %min.3 %tmp.7;
+[ "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/source/SlowMotionMoonWatchView.mc" 37 8 ]
+        [ "_Users_christophehumbert_Code_sdkgarmin_SlowMotionMoonWatch_source_SlowMotionMoonWatchView_mc_31_40_start" "_Users_christophehumbert_Code_sdkgarmin_SlowMotionMoonWatch_source_SlowMotionMoonWatchView_mc_31_40_stop" ]
+        %center_x.4 = local;
+        %tmp.8 = lgetv %dc;
+        %tmp.9 = getv function %tmp.8 :getWidth;
+        %tmp.10 = invoke %tmp.8 %tmp.9();
+        %tmp.11 = 2;
+        %tmp.12 = div %tmp.10 %tmp.11;
+        lputv %center_x.4 %tmp.12;
+[ "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/source/SlowMotionMoonWatchView.mc" 38 8 ]
+        [ "_Users_christophehumbert_Code_sdkgarmin_SlowMotionMoonWatch_source_SlowMotionMoonWatchView_mc_31_40_start" "_Users_christophehumbert_Code_sdkgarmin_SlowMotionMoonWatch_source_SlowMotionMoonWatchView_mc_31_40_stop" ]
+        %center_y.5 = local;
+        %tmp.13 = lgetv %dc;
+        %tmp.14 = getv function %tmp.13 :getHeight;
+        %tmp.15 = invoke %tmp.13 %tmp.14();
+        %tmp.16 = 2;
+        %tmp.17 = div %tmp.15 %tmp.16;
+        lputv %center_y.5 %tmp.17;
+[ "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/source/SlowMotionMoonWatchView.mc" 39 8 ]
+        [ "_Users_christophehumbert_Code_sdkgarmin_SlowMotionMoonWatch_source_SlowMotionMoonWatchView_mc_31_40_start" "_Users_christophehumbert_Code_sdkgarmin_SlowMotionMoonWatch_source_SlowMotionMoonWatchView_mc_31_40_stop" ]
+        %diameter.6 = local;
+        %tmp.18 = lgetv %dc;
+        %tmp.19 = getv function %tmp.18 :getWidth;
+        %tmp.20 = invoke %tmp.18 %tmp.19();
+        lputv %diameter.6 %tmp.20;
 [ "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/source/SlowMotionMoonWatchView.mc" 40 8 ]
-        [ "_Users_christophehumbert_Code_sdkgarmin_SlowMotionMoonWatch_source_SlowMotionMoonWatchView_mc_25_40_start" "_Users_christophehumbert_Code_sdkgarmin_SlowMotionMoonWatch_source_SlowMotionMoonWatchView_mc_25_40_stop" ]
-        %timeString.4 = local;
-        %tmp.31 = getm $.Toybox.Lang;
-        %tmp.32 = getv function %tmp.31 :format;
-        %tmp.34 = lgetv %timeFormat.1;
-        %tmp.35 = newa 2;
-        %tmp.37 = lgetv %hours.3;
-        %tmp.38 = dup %tmp.35;
-        %tmp.39 = aputv %tmp.38 0 %tmp.37;
-        %tmp.40 = lgetv %clockTime.2;
-        %tmp.41 = getv %tmp.40 :min;
-        %tmp.42 = getv function %tmp.41 :format;
-        %tmp.43 = "%02d";
-        %tmp.44 = invoke %tmp.41 %tmp.42(%tmp.43);
-        %tmp.45 = dup %tmp.39;
-        %tmp.46 = aputv %tmp.45 1 %tmp.44;
-        %tmp.47 = invoke %tmp.31 %tmp.32(%tmp.34, %tmp.46);
-        lputv %timeString.4 %tmp.47;
+        [ "_Users_christophehumbert_Code_sdkgarmin_SlowMotionMoonWatch_source_SlowMotionMoonWatchView_mc_31_40_start" "_Users_christophehumbert_Code_sdkgarmin_SlowMotionMoonWatch_source_SlowMotionMoonWatchView_mc_31_40_stop" ]
+        %radius.7 = local;
+        %tmp.22 = lgetv %diameter.6;
+        %tmp.23 = 2;
+        %tmp.24 = div %tmp.22 %tmp.23;
+        lputv %radius.7 %tmp.24;
+[ "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/source/SlowMotionMoonWatchView.mc" 42 8 ]
+        [ "_Users_christophehumbert_Code_sdkgarmin_SlowMotionMoonWatch_source_SlowMotionMoonWatchView_mc_31_40_start" "_Users_christophehumbert_Code_sdkgarmin_SlowMotionMoonWatch_source_SlowMotionMoonWatchView_mc_31_40_stop" ]
+        %hour_fraction.8 = local;
+        %tmp.26 = lgetv %min.3;
+        %tmp.27 = 60.0;
+        %tmp.28 = div %tmp.26 %tmp.27;
+        lputv %hour_fraction.8 %tmp.28;
 [ "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/source/SlowMotionMoonWatchView.mc" 43 8 ]
-        [ "_Users_christophehumbert_Code_sdkgarmin_SlowMotionMoonWatch_source_SlowMotionMoonWatchView_mc_25_40_start" "_Users_christophehumbert_Code_sdkgarmin_SlowMotionMoonWatch_source_SlowMotionMoonWatchView_mc_25_40_stop" ]
-        %view.5 = local;
-        %tmp.49 = getv ? :View;
-        %tmp.50 = getv function %tmp.49 :findDrawableById;
-        %tmp.51 = "TimeLabel";
-        %tmp.52 = invoke %tmp.49 %tmp.50(%tmp.51);
-        %tmp.53 = as %tmp.52 Text;
-        lputv %view.5 %tmp.53;
+        [ "_Users_christophehumbert_Code_sdkgarmin_SlowMotionMoonWatch_source_SlowMotionMoonWatchView_mc_31_40_start" "_Users_christophehumbert_Code_sdkgarmin_SlowMotionMoonWatch_source_SlowMotionMoonWatchView_mc_31_40_stop" ]
+        %hour_angle.9 = local;
+        %tmp.30 = lgetv %hours.2;
+        %tmp.32 = lgetv %hour_fraction.8;
+        %tmp.33 = add %tmp.30 %tmp.32;
+        %tmp.34 = 24.0;
+        %tmp.35 = div %tmp.33 %tmp.34;
+        %tmp.37 = getv ? :TWO_PI;
+        %tmp.38 = mul %tmp.35 %tmp.37;
+        lputv %hour_angle.9 %tmp.38;
 [ "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/source/SlowMotionMoonWatchView.mc" 44 8 ]
-        %tmp.54 = lgetv %view.5;
-        %tmp.55 = getv function %tmp.54 :setColor;
-        %tmp.56 = self;
-        %tmp.57 = getv function %tmp.56 :getApp;
-        %tmp.58 = invoke %tmp.56 %tmp.57();
-        %tmp.59 = getv function %tmp.58 :getProperty;
-        %tmp.60 = "ForegroundColor";
-        %tmp.61 = invoke %tmp.58 %tmp.59(%tmp.60);
-        %tmp.62 = as %tmp.61 Number;
-        invoke %tmp.54 %tmp.55(%tmp.62);
-[ "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/source/SlowMotionMoonWatchView.mc" 45 8 ]
-        %tmp.63 = lgetv %view.5;
-        %tmp.64 = getv function %tmp.63 :setText;
-        %tmp.66 = lgetv %timeString.4;
-        invoke %tmp.63 %tmp.64(%tmp.66);
-[ "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/source/SlowMotionMoonWatchView.mc" 48 8 ]
-        %tmp.68 = getv ? :View;
-        %tmp.69 = getv function %tmp.68 :onUpdate;
-        %tmp.71 = lgetv %dc;
-        invoke %tmp.68 %tmp.69(%tmp.71);
-_Users_christophehumbert_Code_sdkgarmin_SlowMotionMoonWatch_source_SlowMotionMoonWatchView_mc_25_40_stop:
+        %tmp.39 = lgetv %hour_angle.9;
+        %tmp.41 = getv ? :ANGLE_ADJUST;
+        %tmp.42 = sub %tmp.39 %tmp.41;
+        lputv %hour_angle.9 %tmp.42;
+[ "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/source/SlowMotionMoonWatchView.mc" 46 8 ]
+        %tmp.43 = lgetv %dc;
+        %tmp.44 = getv function %tmp.43 :clear;
+        invoke %tmp.43 %tmp.44();
+[ "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/source/SlowMotionMoonWatchView.mc" 49 8 ]
+        %tmp.45 = lgetv %dc;
+        %tmp.46 = getv function %tmp.45 :setColor;
+        %tmp.47 = getm $.Toybox.Graphics;
+        %tmp.48 = getv %tmp.47 :COLOR_BLACK;
+        %tmp.49 = getm $.Toybox.Graphics;
+        %tmp.50 = getv %tmp.49 :COLOR_TRANSPARENT;
+        invoke %tmp.45 %tmp.46(%tmp.48, %tmp.50);
+[ "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/source/SlowMotionMoonWatchView.mc" 50 8 ]
+        %tmp.51 = lgetv %dc;
+        %tmp.52 = getv function %tmp.51 :fillCircle;
+        %tmp.54 = lgetv %center_x.4;
+        %tmp.56 = lgetv %center_y.5;
+        %tmp.58 = lgetv %diameter.6;
+        invoke %tmp.51 %tmp.52(%tmp.54, %tmp.56, %tmp.58);
+[ "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/source/SlowMotionMoonWatchView.mc" 53 8 ]
+        %tmp.59 = lgetv %dc;
+        %tmp.60 = getv function %tmp.59 :setColor;
+        %tmp.61 = getm $.Toybox.Graphics;
+        %tmp.62 = getv %tmp.61 :COLOR_DK_GRAY;
+        %tmp.63 = getm $.Toybox.Graphics;
+        %tmp.64 = getv %tmp.63 :COLOR_TRANSPARENT;
+        invoke %tmp.59 %tmp.60(%tmp.62, %tmp.64);
+[ "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/source/SlowMotionMoonWatchView.mc" 54 8 ]
+        %tmp.65 = lgetv %dc;
+        %tmp.66 = getv function %tmp.65 :setPenWidth;
+        %tmp.67 = 2;
+        invoke %tmp.65 %tmp.66(%tmp.67);
+[ "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/source/SlowMotionMoonWatchView.mc" 55 8 ]
+        %tmp.68 = lgetv %dc;
+        %tmp.69 = getv function %tmp.68 :drawLine;
+        %tmp.71 = lgetv %center_x.4;
+        %tmp.73 = lgetv %center_y.5;
+        %tmp.75 = lgetv %center_x.4;
+        %tmp.77 = lgetv %radius.7;
+        %tmp.78 = 0.1;
+        %tmp.79 = mul %tmp.77 %tmp.78;
+        %tmp.81 = getv ? :Math;
+        %tmp.82 = getv function %tmp.81 :cos;
+        %tmp.84 = lgetv %hour_angle.9;
+        %tmp.86 = getv ? :Math;
+        %tmp.87 = getv %tmp.86 :PI;
+        %tmp.88 = add %tmp.84 %tmp.87;
+        %tmp.89 = invoke %tmp.81 %tmp.82(%tmp.88);
+        %tmp.90 = mul %tmp.79 %tmp.89;
+        %tmp.91 = add %tmp.75 %tmp.90;
+        %tmp.93 = lgetv %center_y.5;
+        %tmp.95 = lgetv %radius.7;
+        %tmp.96 = 0.1;
+        %tmp.97 = mul %tmp.95 %tmp.96;
+        %tmp.99 = getv ? :Math;
+        %tmp.100 = getv function %tmp.99 :sin;
+        %tmp.102 = lgetv %hour_angle.9;
+        %tmp.104 = getv ? :Math;
+        %tmp.105 = getv %tmp.104 :PI;
+        %tmp.106 = add %tmp.102 %tmp.105;
+        %tmp.107 = invoke %tmp.99 %tmp.100(%tmp.106);
+        %tmp.108 = mul %tmp.97 %tmp.107;
+        %tmp.109 = add %tmp.93 %tmp.108;
+        invoke %tmp.68 %tmp.69(%tmp.71, %tmp.73, %tmp.91, %tmp.109);
+[ "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/source/SlowMotionMoonWatchView.mc" 58 8 ]
+        %tmp.110 = lgetv %dc;
+        %tmp.111 = getv function %tmp.110 :drawLine;
+        %tmp.113 = lgetv %center_x.4;
+        %tmp.115 = lgetv %center_y.5;
+        %tmp.117 = lgetv %center_x.4;
+        %tmp.119 = lgetv %radius.7;
+        %tmp.121 = getv ? :Math;
+        %tmp.122 = getv function %tmp.121 :cos;
+        %tmp.124 = lgetv %hour_angle.9;
+        %tmp.125 = invoke %tmp.121 %tmp.122(%tmp.124);
+        %tmp.126 = mul %tmp.119 %tmp.125;
+        %tmp.127 = add %tmp.117 %tmp.126;
+        %tmp.129 = lgetv %center_y.5;
+        %tmp.131 = lgetv %radius.7;
+        %tmp.133 = getv ? :Math;
+        %tmp.134 = getv function %tmp.133 :sin;
+        %tmp.136 = lgetv %hour_angle.9;
+        %tmp.137 = invoke %tmp.133 %tmp.134(%tmp.136);
+        %tmp.138 = mul %tmp.131 %tmp.137;
+        %tmp.139 = add %tmp.129 %tmp.138;
+        invoke %tmp.110 %tmp.111(%tmp.113, %tmp.115, %tmp.127, %tmp.139);
+[ "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/source/SlowMotionMoonWatchView.mc" 61 8 ]
+        %tmp.140 = lgetv %dc;
+        %tmp.141 = getv function %tmp.140 :drawCircle;
+        %tmp.143 = lgetv %center_x.4;
+        %tmp.145 = lgetv %center_y.5;
+        %tmp.147 = lgetv %radius.7;
+        %tmp.148 = 0.05;
+        %tmp.149 = mul %tmp.147 %tmp.148;
+        invoke %tmp.140 %tmp.141(%tmp.143, %tmp.145, %tmp.149);
+[ "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/source/SlowMotionMoonWatchView.mc" 64 5 ]
+        [ "_Users_christophehumbert_Code_sdkgarmin_SlowMotionMoonWatch_source_SlowMotionMoonWatchView_mc_31_40_start" "_Users_christophehumbert_Code_sdkgarmin_SlowMotionMoonWatch_source_SlowMotionMoonWatchView_mc_31_40_stop" ]
+        %RedMoon.10 = local;
+        %tmp.150 = getm $.Toybox.WatchUi;
+        %tmp.151 = getv function %tmp.150 :loadResource;
+        %tmp.153 = getv ? :Rez;
+        %tmp.154 = getv %tmp.153 :Drawables;
+        %tmp.155 = getv %tmp.154 :redmoon;
+        %tmp.156 = invoke %tmp.150 %tmp.151(%tmp.155);
+        lputv %RedMoon.10 %tmp.156;
+[ "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/source/SlowMotionMoonWatchView.mc" 65 8 ]
+        %tmp.157 = lgetv %dc;
+        %tmp.158 = getv function %tmp.157 :drawBitmap;
+        %tmp.160 = lgetv %center_x.4;
+        %tmp.162 = lgetv %radius.7;
+        %tmp.163 = 0.25;
+        %tmp.164 = mul %tmp.162 %tmp.163;
+        %tmp.165 = add %tmp.160 %tmp.164;
+        %tmp.167 = lgetv %center_y.5;
+        %tmp.169 = lgetv %RedMoon.10;
+        invoke %tmp.157 %tmp.158(%tmp.165, %tmp.167, %tmp.169);
+[ "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/source/SlowMotionMoonWatchView.mc" 68 8 ]
+        for @_Users_christophehumbert_Code_sdkgarmin_SlowMotionMoonWatch_source_SlowMotionMoonWatchView_mc_68_8_for_test @_Users_christophehumbert_Code_sdkgarmin_SlowMotionMoonWatch_source_SlowMotionMoonWatchView_mc_68_8_for_incr @_Users_christophehumbert_Code_sdkgarmin_SlowMotionMoonWatch_source_SlowMotionMoonWatchView_mc_68_8_for_end;
+_Users_christophehumbert_Code_sdkgarmin_SlowMotionMoonWatch_source_SlowMotionMoonWatchView_mc_68_8_for_init:
+        [ "_Users_christophehumbert_Code_sdkgarmin_SlowMotionMoonWatch_source_SlowMotionMoonWatchView_mc_68_8_for_begin" "_Users_christophehumbert_Code_sdkgarmin_SlowMotionMoonWatch_source_SlowMotionMoonWatchView_mc_68_8_for_end" ]
+        %i.11 = local;
+        %tmp.170 = 0;
+        lputv %i.11 %tmp.170;
+_Users_christophehumbert_Code_sdkgarmin_SlowMotionMoonWatch_source_SlowMotionMoonWatchView_mc_68_8_for_test:
+        %tmp.172 = lgetv %i.11;
+        %tmp.173 = 24;
+        %tmp.174 = lt %tmp.172 %tmp.173;
+        bf %tmp.174 @_Users_christophehumbert_Code_sdkgarmin_SlowMotionMoonWatch_source_SlowMotionMoonWatchView_mc_68_8_for_end;
+_Users_christophehumbert_Code_sdkgarmin_SlowMotionMoonWatch_source_SlowMotionMoonWatchView_mc_68_8_for_begin:
+_Users_christophehumbert_Code_sdkgarmin_SlowMotionMoonWatch_source_SlowMotionMoonWatchView_mc_68_37_start:
+[ "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/source/SlowMotionMoonWatchView.mc" 69 12 ]
+        %tmp.175 = lgetv %dc;
+        %tmp.176 = getv function %tmp.175 :setColor;
+        %tmp.177 = getm $.Toybox.Graphics;
+        %tmp.178 = getv %tmp.177 :COLOR_WHITE;
+        %tmp.179 = getm $.Toybox.Graphics;
+        %tmp.180 = getv %tmp.179 :COLOR_TRANSPARENT;
+        invoke %tmp.175 %tmp.176(%tmp.178, %tmp.180);
+[ "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/source/SlowMotionMoonWatchView.mc" 70 12 ]
+        %tmp.181 = lgetv %dc;
+        %tmp.182 = getv function %tmp.181 :setPenWidth;
+        %tmp.183 = 2;
+        invoke %tmp.181 %tmp.182(%tmp.183);
+[ "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/source/SlowMotionMoonWatchView.mc" 71 12 ]
+        %tmp.184 = lgetv %dc;
+        %tmp.185 = getv function %tmp.184 :drawLine;
+        %tmp.187 = lgetv %center_x.4;
+        %tmp.189 = lgetv %radius.7;
+        %tmp.190 = 0.9;
+        %tmp.191 = mul %tmp.189 %tmp.190;
+        %tmp.193 = getv ? :Math;
+        %tmp.194 = getv function %tmp.193 :cos;
+        %tmp.196 = lgetv %i.11;
+        %tmp.197 = 15;
+        %tmp.198 = mul %tmp.196 %tmp.197;
+        %tmp.200 = getv ? :TWO_PI;
+        %tmp.201 = mul %tmp.198 %tmp.200;
+        %tmp.202 = 360;
+        %tmp.203 = div %tmp.201 %tmp.202;
+        %tmp.204 = invoke %tmp.193 %tmp.194(%tmp.203);
+        %tmp.205 = mul %tmp.191 %tmp.204;
+        %tmp.206 = add %tmp.187 %tmp.205;
+        %tmp.208 = lgetv %center_y.5;
+        %tmp.210 = lgetv %radius.7;
+        %tmp.211 = 0.9;
+        %tmp.212 = mul %tmp.210 %tmp.211;
+        %tmp.214 = getv ? :Math;
+        %tmp.215 = getv function %tmp.214 :sin;
+        %tmp.217 = lgetv %i.11;
+        %tmp.218 = 15;
+        %tmp.219 = mul %tmp.217 %tmp.218;
+        %tmp.221 = getv ? :TWO_PI;
+        %tmp.222 = mul %tmp.219 %tmp.221;
+        %tmp.223 = 360;
+        %tmp.224 = div %tmp.222 %tmp.223;
+        %tmp.225 = invoke %tmp.214 %tmp.215(%tmp.224);
+        %tmp.226 = mul %tmp.212 %tmp.225;
+        %tmp.227 = add %tmp.208 %tmp.226;
+        %tmp.229 = lgetv %center_x.4;
+        %tmp.231 = lgetv %radius.7;
+        %tmp.233 = getv ? :Math;
+        %tmp.234 = getv function %tmp.233 :cos;
+        %tmp.236 = lgetv %i.11;
+        %tmp.237 = 15;
+        %tmp.238 = mul %tmp.236 %tmp.237;
+        %tmp.240 = getv ? :TWO_PI;
+        %tmp.241 = mul %tmp.238 %tmp.240;
+        %tmp.242 = 360;
+        %tmp.243 = div %tmp.241 %tmp.242;
+        %tmp.244 = invoke %tmp.233 %tmp.234(%tmp.243);
+        %tmp.245 = mul %tmp.231 %tmp.244;
+        %tmp.246 = add %tmp.229 %tmp.245;
+        %tmp.248 = lgetv %center_y.5;
+        %tmp.250 = lgetv %radius.7;
+        %tmp.252 = getv ? :Math;
+        %tmp.253 = getv function %tmp.252 :sin;
+        %tmp.255 = lgetv %i.11;
+        %tmp.256 = 15;
+        %tmp.257 = mul %tmp.255 %tmp.256;
+        %tmp.259 = getv ? :TWO_PI;
+        %tmp.260 = mul %tmp.257 %tmp.259;
+        %tmp.261 = 360;
+        %tmp.262 = div %tmp.260 %tmp.261;
+        %tmp.263 = invoke %tmp.252 %tmp.253(%tmp.262);
+        %tmp.264 = mul %tmp.250 %tmp.263;
+        %tmp.265 = add %tmp.248 %tmp.264;
+        invoke %tmp.184 %tmp.185(%tmp.206, %tmp.227, %tmp.246, %tmp.265);
+_Users_christophehumbert_Code_sdkgarmin_SlowMotionMoonWatch_source_SlowMotionMoonWatchView_mc_68_37_stop:
+_Users_christophehumbert_Code_sdkgarmin_SlowMotionMoonWatch_source_SlowMotionMoonWatchView_mc_68_8_for_incr:
+[ "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/source/SlowMotionMoonWatchView.mc" 68 ]
+        %tmp.268 = lgetv %i.11;
+        %tmp.269 = add %tmp.268 1;
+        lputv %i.11 %tmp.269;
+        goto @_Users_christophehumbert_Code_sdkgarmin_SlowMotionMoonWatch_source_SlowMotionMoonWatchView_mc_68_8_for_test;
+_Users_christophehumbert_Code_sdkgarmin_SlowMotionMoonWatch_source_SlowMotionMoonWatchView_mc_68_8_for_end:
+[ "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/source/SlowMotionMoonWatchView.mc" 79 8 ]
+        for @_Users_christophehumbert_Code_sdkgarmin_SlowMotionMoonWatch_source_SlowMotionMoonWatchView_mc_79_8_for_test @_Users_christophehumbert_Code_sdkgarmin_SlowMotionMoonWatch_source_SlowMotionMoonWatchView_mc_79_8_for_incr @_Users_christophehumbert_Code_sdkgarmin_SlowMotionMoonWatch_source_SlowMotionMoonWatchView_mc_79_8_for_end;
+_Users_christophehumbert_Code_sdkgarmin_SlowMotionMoonWatch_source_SlowMotionMoonWatchView_mc_79_8_for_init:
+        [ "_Users_christophehumbert_Code_sdkgarmin_SlowMotionMoonWatch_source_SlowMotionMoonWatchView_mc_79_8_for_begin" "_Users_christophehumbert_Code_sdkgarmin_SlowMotionMoonWatch_source_SlowMotionMoonWatchView_mc_79_8_for_end" ]
+        %i.12 = local;
+        %tmp.270 = 0;
+        lputv %i.12 %tmp.270;
+_Users_christophehumbert_Code_sdkgarmin_SlowMotionMoonWatch_source_SlowMotionMoonWatchView_mc_79_8_for_test:
+        %tmp.272 = lgetv %i.12;
+        %tmp.273 = 24;
+        %tmp.274 = lt %tmp.272 %tmp.273;
+        bf %tmp.274 @_Users_christophehumbert_Code_sdkgarmin_SlowMotionMoonWatch_source_SlowMotionMoonWatchView_mc_79_8_for_end;
+_Users_christophehumbert_Code_sdkgarmin_SlowMotionMoonWatch_source_SlowMotionMoonWatchView_mc_79_8_for_begin:
+_Users_christophehumbert_Code_sdkgarmin_SlowMotionMoonWatch_source_SlowMotionMoonWatchView_mc_79_37_start:
+[ "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/source/SlowMotionMoonWatchView.mc" 80 12 ]
+        %tmp.275 = lgetv %dc;
+        %tmp.276 = getv function %tmp.275 :setColor;
+        %tmp.277 = getm $.Toybox.Graphics;
+        %tmp.278 = getv %tmp.277 :COLOR_WHITE;
+        %tmp.279 = getm $.Toybox.Graphics;
+        %tmp.280 = getv %tmp.279 :COLOR_TRANSPARENT;
+        invoke %tmp.275 %tmp.276(%tmp.278, %tmp.280);
+[ "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/source/SlowMotionMoonWatchView.mc" 81 12 ]
+        %tmp.281 = lgetv %dc;
+        %tmp.282 = getv function %tmp.281 :setPenWidth;
+        %tmp.283 = 2;
+        invoke %tmp.281 %tmp.282(%tmp.283);
+[ "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/source/SlowMotionMoonWatchView.mc" 82 12 ]
+        %tmp.284 = lgetv %dc;
+        %tmp.285 = getv function %tmp.284 :drawLine;
+        %tmp.287 = lgetv %center_x.4;
+        %tmp.289 = lgetv %radius.7;
+        %tmp.290 = 0.8;
+        %tmp.291 = mul %tmp.289 %tmp.290;
+        %tmp.293 = getv ? :Math;
+        %tmp.294 = getv function %tmp.293 :cos;
+        %tmp.296 = lgetv %i.12;
+        %tmp.297 = 15;
+        %tmp.298 = mul %tmp.296 %tmp.297;
+        %tmp.299 = 15;
+        %tmp.300 = 2;
+        %tmp.301 = div %tmp.299 %tmp.300;
+        %tmp.302 = add %tmp.298 %tmp.301;
+        %tmp.304 = getv ? :TWO_PI;
+        %tmp.305 = mul %tmp.302 %tmp.304;
+        %tmp.306 = 360;
+        %tmp.307 = div %tmp.305 %tmp.306;
+        %tmp.308 = invoke %tmp.293 %tmp.294(%tmp.307);
+        %tmp.309 = mul %tmp.291 %tmp.308;
+        %tmp.310 = add %tmp.287 %tmp.309;
+        %tmp.312 = lgetv %center_y.5;
+        %tmp.314 = lgetv %radius.7;
+        %tmp.315 = 0.8;
+        %tmp.316 = mul %tmp.314 %tmp.315;
+        %tmp.318 = getv ? :Math;
+        %tmp.319 = getv function %tmp.318 :sin;
+        %tmp.321 = lgetv %i.12;
+        %tmp.322 = 15;
+        %tmp.323 = mul %tmp.321 %tmp.322;
+        %tmp.324 = 15;
+        %tmp.325 = 2;
+        %tmp.326 = div %tmp.324 %tmp.325;
+        %tmp.327 = add %tmp.323 %tmp.326;
+        %tmp.329 = getv ? :TWO_PI;
+        %tmp.330 = mul %tmp.327 %tmp.329;
+        %tmp.331 = 360;
+        %tmp.332 = div %tmp.330 %tmp.331;
+        %tmp.333 = invoke %tmp.318 %tmp.319(%tmp.332);
+        %tmp.334 = mul %tmp.316 %tmp.333;
+        %tmp.335 = add %tmp.312 %tmp.334;
+        %tmp.337 = lgetv %center_x.4;
+        %tmp.339 = lgetv %radius.7;
+        %tmp.341 = getv ? :Math;
+        %tmp.342 = getv function %tmp.341 :cos;
+        %tmp.344 = lgetv %i.12;
+        %tmp.345 = 15;
+        %tmp.346 = mul %tmp.344 %tmp.345;
+        %tmp.347 = 15;
+        %tmp.348 = 2;
+        %tmp.349 = div %tmp.347 %tmp.348;
+        %tmp.350 = add %tmp.346 %tmp.349;
+        %tmp.352 = getv ? :TWO_PI;
+        %tmp.353 = mul %tmp.350 %tmp.352;
+        %tmp.354 = 360;
+        %tmp.355 = div %tmp.353 %tmp.354;
+        %tmp.356 = invoke %tmp.341 %tmp.342(%tmp.355);
+        %tmp.357 = mul %tmp.339 %tmp.356;
+        %tmp.358 = add %tmp.337 %tmp.357;
+        %tmp.360 = lgetv %center_y.5;
+        %tmp.362 = lgetv %radius.7;
+        %tmp.364 = getv ? :Math;
+        %tmp.365 = getv function %tmp.364 :sin;
+        %tmp.367 = lgetv %i.12;
+        %tmp.368 = 15;
+        %tmp.369 = mul %tmp.367 %tmp.368;
+        %tmp.370 = 15;
+        %tmp.371 = 2;
+        %tmp.372 = div %tmp.370 %tmp.371;
+        %tmp.373 = add %tmp.369 %tmp.372;
+        %tmp.375 = getv ? :TWO_PI;
+        %tmp.376 = mul %tmp.373 %tmp.375;
+        %tmp.377 = 360;
+        %tmp.378 = div %tmp.376 %tmp.377;
+        %tmp.379 = invoke %tmp.364 %tmp.365(%tmp.378);
+        %tmp.380 = mul %tmp.362 %tmp.379;
+        %tmp.381 = add %tmp.360 %tmp.380;
+        invoke %tmp.284 %tmp.285(%tmp.310, %tmp.335, %tmp.358, %tmp.381);
+_Users_christophehumbert_Code_sdkgarmin_SlowMotionMoonWatch_source_SlowMotionMoonWatchView_mc_79_37_stop:
+_Users_christophehumbert_Code_sdkgarmin_SlowMotionMoonWatch_source_SlowMotionMoonWatchView_mc_79_8_for_incr:
+[ "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/source/SlowMotionMoonWatchView.mc" 79 ]
+        %tmp.384 = lgetv %i.12;
+        %tmp.385 = add %tmp.384 1;
+        lputv %i.12 %tmp.385;
+        goto @_Users_christophehumbert_Code_sdkgarmin_SlowMotionMoonWatch_source_SlowMotionMoonWatchView_mc_79_8_for_test;
+_Users_christophehumbert_Code_sdkgarmin_SlowMotionMoonWatch_source_SlowMotionMoonWatchView_mc_79_8_for_end:
+_Users_christophehumbert_Code_sdkgarmin_SlowMotionMoonWatch_source_SlowMotionMoonWatchView_mc_31_40_stop:
     }
-    [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/source/SlowMotionMoonWatchView.mc"; @line = 54; ]
+    [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/source/SlowMotionMoonWatchView.mc"; @line = 95; ]
     function onHide() as Void {
     }
-    [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/source/SlowMotionMoonWatchView.mc"; @line = 58; ]
+    [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/source/SlowMotionMoonWatchView.mc"; @line = 99; ]
     function onExitSleep() as Void {
     }
-    [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/source/SlowMotionMoonWatchView.mc"; @line = 62; ]
+    [ @file = "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/source/SlowMotionMoonWatchView.mc"; @line = 103; ]
     function onEnterSleep() as Void {
     }
 }

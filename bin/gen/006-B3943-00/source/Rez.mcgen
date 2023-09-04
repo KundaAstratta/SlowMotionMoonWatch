@@ -6,6 +6,8 @@ using Toybox.Graphics as Gfx;
 
 module Rez {
     module Drawables {
+        (:initialized) var Notification as Symbol;
+        (:initialized) var redmoon as Symbol;
         (:initialized) var LauncherIcon as Symbol;
     } // Drawables
 
@@ -17,11 +19,11 @@ module Rez {
 
     module Layouts {
         function WatchFace(dc as Graphics.Dc) as Array<WatchUi.Drawable> {
-            var rez_cmp_local_custom_drawable_20037624301671290860 = new Background();
+            var rez_cmp_local_custom_drawable_18952101191301075034 = new Background();
 
             var rez_cmp_local_text_TimeLabel = new WatchUi.Text({:identifier=>"TimeLabel", :color=>Graphics.COLOR_BLUE, :locX=>(416 * 0.5), :locY=>((416 - dc.getFontHeight(Graphics.FONT_LARGE)) * 0.5), :justification=>Graphics.TEXT_JUSTIFY_CENTER, :font=>Graphics.FONT_LARGE});
 
-            return [rez_cmp_local_custom_drawable_20037624301671290860, rez_cmp_local_text_TimeLabel] as Array<WatchUi.Drawable>;
+            return [rez_cmp_local_custom_drawable_18952101191301075034, rez_cmp_local_text_TimeLabel] as Array<WatchUi.Drawable>;
         }
     } // Layouts
 
