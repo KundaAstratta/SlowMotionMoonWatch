@@ -47,10 +47,10 @@ module Rez {
 _Users_christophehumbert_Code_sdkgarmin_SlowMotionMoonWatch_bin_gen_006_B3943_00_source_Rez_mcgen_21_73_start:
 [ "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen" 22 12 ]
             [ "_Users_christophehumbert_Code_sdkgarmin_SlowMotionMoonWatch_bin_gen_006_B3943_00_source_Rez_mcgen_21_73_start" "_Users_christophehumbert_Code_sdkgarmin_SlowMotionMoonWatch_bin_gen_006_B3943_00_source_Rez_mcgen_21_73_stop" ]
-            %rez_cmp_local_custom_drawable_18952101191301075034.1 = local;
+            %rez_cmp_local_custom_drawable_18099891715338291575.1 = local;
             %tmp.4 = getv ? :Background;
             %tmp.1 = newc %tmp.4 ();
-            lputv %rez_cmp_local_custom_drawable_18952101191301075034.1 %tmp.1;
+            lputv %rez_cmp_local_custom_drawable_18099891715338291575.1 %tmp.1;
 [ "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen" 24 12 ]
             [ "_Users_christophehumbert_Code_sdkgarmin_SlowMotionMoonWatch_bin_gen_006_B3943_00_source_Rez_mcgen_21_73_start" "_Users_christophehumbert_Code_sdkgarmin_SlowMotionMoonWatch_bin_gen_006_B3943_00_source_Rez_mcgen_21_73_stop" ]
             %rez_cmp_local_text_TimeLabel.2 = local;
@@ -98,7 +98,7 @@ _Users_christophehumbert_Code_sdkgarmin_SlowMotionMoonWatch_bin_gen_006_B3943_00
             lputv %rez_cmp_local_text_TimeLabel.2 %tmp.5;
 [ "/Users/christophehumbert/Code/sdkgarmin/SlowMotionMoonWatch/bin/gen/006-B3943-00/source/Rez.mcgen" 26 12 ]
             %tmp.53 = newa Array<WatchUi.Drawable> 2;
-            %tmp.55 = lgetv %rez_cmp_local_custom_drawable_18952101191301075034.1;
+            %tmp.55 = lgetv %rez_cmp_local_custom_drawable_18099891715338291575.1;
             %tmp.56 = dup %tmp.53;
             %tmp.57 = aputv %tmp.56 0 %tmp.55;
             %tmp.59 = lgetv %rez_cmp_local_text_TimeLabel.2;

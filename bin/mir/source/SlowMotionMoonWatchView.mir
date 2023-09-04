@@ -248,7 +248,7 @@ _Users_christophehumbert_Code_sdkgarmin_SlowMotionMoonWatch_source_SlowMotionMoo
         %tmp.158 = getv function %tmp.157 :drawBitmap;
         %tmp.160 = lgetv %center_x.4;
         %tmp.162 = lgetv %radius.7;
-        %tmp.163 = 0.25;
+        %tmp.163 = 0.05;
         %tmp.164 = mul %tmp.162 %tmp.163;
         %tmp.165 = add %tmp.160 %tmp.164;
         %tmp.167 = lgetv %center_y.5;
