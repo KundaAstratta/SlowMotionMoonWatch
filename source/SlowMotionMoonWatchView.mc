@@ -5,8 +5,6 @@ import Toybox.System;
 import Toybox.WatchUi;
 
 class SlowMotionMoonWatchView extends WatchUi.WatchFace {
-    // awake
-    var isAwake;
     // 2 pi
     var TWO_PI = Math.PI * 2;
    //angle adjust for time hands
@@ -62,7 +60,7 @@ class SlowMotionMoonWatchView extends WatchUi.WatchFace {
 
         //Red Moon
 	    var RedMoon = WatchUi.loadResource(Rez.Drawables.redmoon) ;
-        dc.drawBitmap(center_x + radius * 0.05, center_y, RedMoon) ;
+        dc.drawBitmap(center_x, center_y, RedMoon) ;
 
         //digits
         for (var i = 0; i < 24; i++) {
