@@ -3,6 +3,8 @@ import Toybox.Graphics;
 import Toybox.Lang;
 import Toybox.System;
 import Toybox.WatchUi;
+import Toybox.Time;
+import Toybox.Time.Gregorian;
 
 class SlowMotionMoonWatchView extends WatchUi.WatchFace {
     // 2 pi
@@ -41,26 +43,66 @@ class SlowMotionMoonWatchView extends WatchUi.WatchFace {
         var hour_angle = ((hours  + hour_fraction) / 24.0) * TWO_PI;
         hour_angle -= ANGLE_ADJUST;
 
-        dc.clear(); 
+        var today = Gregorian.info(Time.now(), Time.FORMAT_SHORT);
+        var moonNumber = getMoonPhase(today.year, ((today.month)-1), today.day);  
+        System.println("hello world " + moonNumber);
+
+
+        
+        //dc.clear(); 
+        View.onUpdate(dc);
+
 
         // Set background color
         dc.setColor(Graphics.COLOR_BLACK , Graphics.COLOR_TRANSPARENT);
         dc.fillCircle(center_x, center_y, diameter);
 
-        //Hand
-        dc.setColor(Graphics.COLOR_DK_GRAY, Graphics.COLOR_TRANSPARENT);  
-        dc.setPenWidth(2);
-        dc.drawLine(center_x, center_y,
-            (center_x + radius * 0.1 * Math.cos(hour_angle +  Math.PI)),
-            (center_y + radius * 0.1 * Math.sin(hour_angle +  Math.PI)));
-        dc.drawLine(center_x, center_y,
-            (center_x + radius * Math.cos(hour_angle)),
-            (center_y + radius * Math.sin(hour_angle)));
-        dc.drawCircle(center_x , center_y, radius * 0.05);
-
         //Red Moon
 	    var RedMoon = WatchUi.loadResource(Rez.Drawables.redmoon) ;
         dc.drawBitmap(center_x, center_y, RedMoon) ;
+
+        //Moon phase
+        if (moonNumber == 0) {
+            var newMoon = WatchUi.loadResource(Rez.Drawables.newMoon) ;
+            dc.drawBitmap(center_x, center_y, newMoon) ;
+        }
+
+        if (moonNumber == 1) {
+            var waxingCrescent = WatchUi.loadResource(Rez.Drawables.waxingCrescent) ;
+            dc.drawBitmap(center_x, center_y, waxingCrescent) ;
+        }
+
+        if (moonNumber == 2) {
+            var firstQuarter = WatchUi.loadResource(Rez.Drawables.firstQuarter) ;
+            dc.drawBitmap(center_x, center_y, firstQuarter) ;
+        }
+
+        if (moonNumber == 3) {
+            var waxingGibbous = WatchUi.loadResource(Rez.Drawables.waxingGibbous) ;
+            dc.drawBitmap(center_x, center_y, waxingGibbous) ;
+        }
+
+        if (moonNumber == 4) {
+            var fullMoon = WatchUi.loadResource(Rez.Drawables.fullMoon) ;
+            dc.drawBitmap(center_x, center_y, fullMoon) ;
+        }
+
+
+        if (moonNumber == 5) {
+            var waningGibbous = WatchUi.loadResource(Rez.Drawables.waningGibbous) ;
+            dc.drawBitmap(center_x, center_y, waningGibbous) ;
+        }
+
+        if (moonNumber == 6) {
+            var thirdQuarter = WatchUi.loadResource(Rez.Drawables.thirdQuarter) ;
+            dc.drawBitmap(center_x, center_y, thirdQuarter) ;
+        }
+
+        if (moonNumber == 7) {
+            var waningCrescent = WatchUi.loadResource(Rez.Drawables.waningCrescent) ;
+            dc.drawBitmap(center_x, center_y, waningCrescent) ;
+        }
+
 
         //digits
         for (var i = 0; i < 24; i++) {
@@ -85,6 +127,22 @@ class SlowMotionMoonWatchView extends WatchUi.WatchFace {
             );
         }
 
+
+        //moon phase label output
+        //dc.drawText(center_x, center_y , Graphics.FONT_XTINY, moonNumber, Graphics.TEXT_JUSTIFY_CENTER);
+
+        //Hand
+        dc.setColor(Graphics.COLOR_DK_GRAY, Graphics.COLOR_TRANSPARENT);  
+        dc.setPenWidth(3);
+        dc.drawLine(center_x, center_y,
+            (center_x + radius * 0.1 * Math.cos(hour_angle +  Math.PI)),
+            (center_y + radius * 0.1 * Math.sin(hour_angle +  Math.PI)));
+        dc.drawLine(center_x, center_y,
+            (center_x + radius * Math.cos(hour_angle)),
+            (center_y + radius * Math.sin(hour_angle)));
+        dc.drawCircle(center_x , center_y, radius * 0.05);
+
+
     }
 
     // Called when this View is removed from the screen. Save the
@@ -100,5 +158,52 @@ class SlowMotionMoonWatchView extends WatchUi.WatchFace {
     // Terminate any active timers and prepare for slow updates.
     function onEnterSleep() as Void {
     }
+
+    function getMoonPhase(year, month, day) {
+
+      var c=0;
+      var e=0;
+      var jd=0;
+      var b=0;
+
+      if (month < 3) {
+        year--;
+        month += 12;
+      }
+
+      ++month; 
+
+      c = 365.25 * year;
+
+      e = 30.6 * month;
+
+      jd = c + e + day - 694039.09; 
+
+      jd /= 29.5305882; 
+
+      b = (jd).toNumber(); 
+
+      jd -= b; 
+
+      b = Math.round(jd * 8); 
+
+      if (b >= 8) {
+        b = 0; 
+      }
+     
+      return (b).toNumber();
+    }
+
+     /*
+     0 => New Moon
+     1 => Waxing Crescent Moon
+     2 => Quarter Moon
+     3 => Waxing Gibbous Moon
+     4 => Full Moon
+     5 => Waning Gibbous Moon
+     6 => Last Quarter Moon
+     7 => Waning Crescent Moon
+     */
+
 
 }
