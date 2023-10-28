@@ -45,13 +45,11 @@ class SlowMotionMoonWatchView extends WatchUi.WatchFace {
 
         var today = Gregorian.info(Time.now(), Time.FORMAT_SHORT);
         var moonNumber = getMoonPhase(today.year, ((today.month)-1), today.day);  
-        System.println("hello world " + moonNumber);
 
 
         
         //dc.clear(); 
         View.onUpdate(dc);
-
 
         // Set background color
         dc.setColor(Graphics.COLOR_BLACK , Graphics.COLOR_TRANSPARENT);
@@ -103,7 +101,6 @@ class SlowMotionMoonWatchView extends WatchUi.WatchFace {
             dc.drawBitmap(center_x, center_y, waningCrescent) ;
         }
 
-
         //digits
         for (var i = 0; i < 24; i++) {
             dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);  
@@ -128,11 +125,8 @@ class SlowMotionMoonWatchView extends WatchUi.WatchFace {
         }
 
 
-        //moon phase label output
-        //dc.drawText(center_x, center_y , Graphics.FONT_XTINY, moonNumber, Graphics.TEXT_JUSTIFY_CENTER);
-
         //Hand
-        dc.setColor(Graphics.COLOR_DK_GRAY, Graphics.COLOR_TRANSPARENT);  
+        dc.setColor(Graphics.COLOR_YELLOW, Graphics.COLOR_TRANSPARENT);  
         dc.setPenWidth(3);
         dc.drawLine(center_x, center_y,
             (center_x + radius * 0.1 * Math.cos(hour_angle +  Math.PI)),
