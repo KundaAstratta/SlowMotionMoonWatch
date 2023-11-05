@@ -5,6 +5,7 @@ import Toybox.System;
 import Toybox.WatchUi;
 import Toybox.Time;
 import Toybox.Time.Gregorian;
+import Toybox.Application;
 
 class SlowMotionMoonWatchView extends WatchUi.WatchFace {
     // 2 pi
@@ -124,9 +125,22 @@ class SlowMotionMoonWatchView extends WatchUi.WatchFace {
             );
         }
 
+        //Numbers
+        var isShowNumbers = Application.getApp().getProperty("isShowNumbers") ; 
+        if (isShowNumbers) {
+            dc.drawText(center_x, center_y - radius * 0.92, Graphics.FONT_SMALL, "0", Graphics.TEXT_JUSTIFY_CENTER);
+            dc.drawText(center_x, center_y + radius * 0.7, Graphics.FONT_SMALL, "12", Graphics.TEXT_JUSTIFY_CENTER);
+            dc.drawText(center_x - radius * 0.82, center_y - radius * 0.12, Graphics.FONT_SMALL, "9", Graphics.TEXT_JUSTIFY_CENTER);
+            dc.drawText(center_x + radius * 0.82, center_y - radius * 0.12 , Graphics.FONT_SMALL, "6", Graphics.TEXT_JUSTIFY_CENTER);
+        }
+
 
         //Hand
+        var handColor = Application.getApp().getProperty("HandColor") ; 
+
         dc.setColor(Graphics.COLOR_YELLOW, Graphics.COLOR_TRANSPARENT);  
+        dc.setColor(handColor, Graphics.COLOR_TRANSPARENT);  
+
         dc.setPenWidth(3);
         dc.drawLine(center_x, center_y,
             (center_x + radius * 0.1 * Math.cos(hour_angle +  Math.PI)),
