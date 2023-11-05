@@ -130,7 +130,7 @@ class SlowMotionMoonWatchView extends WatchUi.WatchFace {
         if (isShowNumbers) {
             dc.drawText(center_x, center_y - radius * 0.92, Graphics.FONT_SMALL, "0", Graphics.TEXT_JUSTIFY_CENTER);
             dc.drawText(center_x, center_y + radius * 0.7, Graphics.FONT_SMALL, "12", Graphics.TEXT_JUSTIFY_CENTER);
-            dc.drawText(center_x - radius * 0.82, center_y - radius * 0.12, Graphics.FONT_SMALL, "9", Graphics.TEXT_JUSTIFY_CENTER);
+            dc.drawText(center_x - radius * 0.82, center_y - radius * 0.12, Graphics.FONT_SMALL, "18", Graphics.TEXT_JUSTIFY_CENTER);
             dc.drawText(center_x + radius * 0.82, center_y - radius * 0.12 , Graphics.FONT_SMALL, "6", Graphics.TEXT_JUSTIFY_CENTER);
         }
 
