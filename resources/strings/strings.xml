@@ -2,7 +2,7 @@
 
     <string id="AppName">SlowMotionMoonWatch</string>
     <string id="HandColorTitle">Hand Color</string>
-    <string id="isShowNumbersTitle">Show numbers (0,6,9,12) ? </string>
+    <string id="isShowNumbersTitle">Show numbers (0,6,12,18) ? </string>
 
     <string id="ColorBlack">Black</string>
     <string id="ColorYellow">Yellow</string>
