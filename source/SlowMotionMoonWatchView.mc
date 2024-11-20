@@ -47,8 +47,6 @@ class SlowMotionMoonWatchView extends WatchUi.WatchFace {
         var today = Gregorian.info(Time.now(), Time.FORMAT_SHORT);
         var moonNumber = getMoonPhase(today.year, ((today.month)-1), today.day);  
 
-
-        
         //dc.clear(); 
         View.onUpdate(dc);
 
@@ -61,50 +59,21 @@ class SlowMotionMoonWatchView extends WatchUi.WatchFace {
         dc.drawBitmap(center_x, center_y, RedMoon) ;
 
         //Moon phase
-        if (moonNumber == 0) {
-            var newMoon = WatchUi.loadResource(Rez.Drawables.newMoon) ;
-            dc.drawBitmap(center_x, center_y, newMoon) ;
-        }
-
-        if (moonNumber == 1) {
-            var waxingCrescent = WatchUi.loadResource(Rez.Drawables.waxingCrescent) ;
-            dc.drawBitmap(center_x, center_y, waxingCrescent) ;
-        }
-
-        if (moonNumber == 2) {
-            var firstQuarter = WatchUi.loadResource(Rez.Drawables.firstQuarter) ;
-            dc.drawBitmap(center_x, center_y, firstQuarter) ;
-        }
-
-        if (moonNumber == 3) {
-            var waxingGibbous = WatchUi.loadResource(Rez.Drawables.waxingGibbous) ;
-            dc.drawBitmap(center_x, center_y, waxingGibbous) ;
-        }
-
-        if (moonNumber == 4) {
-            var fullMoon = WatchUi.loadResource(Rez.Drawables.fullMoon) ;
-            dc.drawBitmap(center_x, center_y, fullMoon) ;
-        }
-
-
-        if (moonNumber == 5) {
-            var waningGibbous = WatchUi.loadResource(Rez.Drawables.waningGibbous) ;
-            dc.drawBitmap(center_x, center_y, waningGibbous) ;
-        }
-
-        if (moonNumber == 6) {
-            var thirdQuarter = WatchUi.loadResource(Rez.Drawables.thirdQuarter) ;
-            dc.drawBitmap(center_x, center_y, thirdQuarter) ;
-        }
-
-        if (moonNumber == 7) {
-            var waningCrescent = WatchUi.loadResource(Rez.Drawables.waningCrescent) ;
-            dc.drawBitmap(center_x, center_y, waningCrescent) ;
-        }
+        showMoonPhase(dc, moonNumber, center_x + center_x / 3 , center_y + center_y / 3);
 
         //digits
         for (var i = 0; i < 24; i++) {
+            // Dessiner le contour blanc du tiret
             dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);  
+            dc.setPenWidth(4); // Largeur du contour blanc
+            dc.drawLine(
+                (center_x + radius * 0.9 * Math.cos(i * 15 * TWO_PI / 360)), 
+                (center_y + radius * 0.9 * Math.sin(i * 15 * TWO_PI / 360)),
+                (center_x + radius * Math.cos(i * 15 * TWO_PI / 360)),
+                (center_y + radius * Math.sin(i * 15 * TWO_PI / 360))
+            );
+            // Dessiner le tiret
+            dc.setColor(0xAA5500, Graphics.COLOR_TRANSPARENT);  
             dc.setPenWidth(2);
             dc.drawLine(
                 (center_x + radius * 0.9 * Math.cos(i * 15 * TWO_PI / 360)), 
@@ -115,7 +84,17 @@ class SlowMotionMoonWatchView extends WatchUi.WatchFace {
         }
 
         for (var i = 0; i < 24; i++) {
+            // Dessiner le contour blanc du tiret
             dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);  
+            dc.setPenWidth(4); // Largeur du contour blanc
+            dc.drawLine(
+                (center_x + radius * 0.8 * Math.cos((i * 15 + 15/2) * TWO_PI / 360)), 
+                (center_y + radius * 0.8 * Math.sin((i * 15 + 15/2) * TWO_PI / 360)),
+                (center_x + radius * Math.cos((i * 15 + 15/2) * TWO_PI / 360)),
+                (center_y + radius * Math.sin((i * 15 + 15/2) * TWO_PI / 360))
+            );
+            // Dessiner le tiret
+            dc.setColor(0xAA5500, Graphics.COLOR_TRANSPARENT);  
             dc.setPenWidth(2);
             dc.drawLine(
                 (center_x + radius * 0.8 * Math.cos((i * 15 + 15/2) * TWO_PI / 360)), 
@@ -128,28 +107,25 @@ class SlowMotionMoonWatchView extends WatchUi.WatchFace {
         //Numbers
         var isShowNumbers = Application.getApp().getProperty("isShowNumbers") ; 
         if (isShowNumbers) {
+            dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);  
             dc.drawText(center_x, center_y - radius * 0.92, Graphics.FONT_SMALL, "0", Graphics.TEXT_JUSTIFY_CENTER);
             dc.drawText(center_x, center_y + radius * 0.7, Graphics.FONT_SMALL, "12", Graphics.TEXT_JUSTIFY_CENTER);
             dc.drawText(center_x - radius * 0.82, center_y - radius * 0.12, Graphics.FONT_SMALL, "18", Graphics.TEXT_JUSTIFY_CENTER);
             dc.drawText(center_x + radius * 0.82, center_y - radius * 0.12 , Graphics.FONT_SMALL, "6", Graphics.TEXT_JUSTIFY_CENTER);
         }
 
-
         //Hand
-        var handColor = Application.getApp().getProperty("HandColor") ; 
+        var isBasicHand = Application.getApp().getProperty("isBasicHand");
+        var handColor = Graphics.COLOR_YELLOW;
+        if (isBasicHand) {
+            //Basic hand
+            basicHand(dc,handColor, center_x, center_y, hour_angle, radius);
+        }
 
-        dc.setColor(Graphics.COLOR_YELLOW, Graphics.COLOR_TRANSPARENT);  
-        dc.setColor(handColor, Graphics.COLOR_TRANSPARENT);  
-
-        dc.setPenWidth(3);
-        dc.drawLine(center_x, center_y,
-            (center_x + radius * 0.1 * Math.cos(hour_angle +  Math.PI)),
-            (center_y + radius * 0.1 * Math.sin(hour_angle +  Math.PI)));
-        dc.drawLine(center_x, center_y,
-            (center_x + radius * Math.cos(hour_angle)),
-            (center_y + radius * Math.sin(hour_angle)));
-        dc.drawCircle(center_x , center_y, radius * 0.05);
-
+        if (!isBasicHand) {
+            //Design Hand
+            designHand(dc,handColor, center_x, center_y, hour_angle, radius);
+        }
 
     }
 
@@ -166,6 +142,62 @@ class SlowMotionMoonWatchView extends WatchUi.WatchFace {
     // Terminate any active timers and prepare for slow updates.
     function onEnterSleep() as Void {
     }
+
+    function basicHand(dc,handColor, center_x, center_y, hour_angle, radius) {
+        dc.setColor(Graphics.COLOR_YELLOW, Graphics.COLOR_TRANSPARENT);  
+        dc.setColor(handColor, Graphics.COLOR_TRANSPARENT);  
+
+        dc.setPenWidth(3);
+        dc.drawLine(center_x, center_y,
+            (center_x + radius * 0.1 * Math.cos(hour_angle +  Math.PI)),
+            (center_y + radius * 0.1 * Math.sin(hour_angle +  Math.PI)));
+        dc.drawLine(center_x, center_y,
+            (center_x + radius * Math.cos(hour_angle)),
+            (center_y + radius * Math.sin(hour_angle)));
+        dc.drawCircle(center_x , center_y, radius * 0.05);
+    }
+
+    function designHand(dc,handColor, center_x, center_y, hour_angle, radius)  {
+        // Couleur plus foncée pour l'effet de profondeur
+        var handOutlineColor = Graphics.COLOR_DK_GRAY; 
+
+        // Calcul des coordonnées pour la pointe en triangle
+        var tipX = center_x + radius  * Math.cos(hour_angle);
+        var tipY = center_y + radius  * Math.sin(hour_angle);
+        var tipX1 = center_x + radius * 0.1 * Math.cos(hour_angle +  Math.PI/10); // Même facteur et angle que la queue
+        var tipY1 = center_y + radius * 0.1 * Math.sin(hour_angle +  Math.PI/10);
+        var tipX2 = center_x + radius * 0.1 * Math.cos(hour_angle -  Math.PI/10);
+        var tipY2 = center_y + radius * 0.1 * Math.sin(hour_angle -  Math.PI/10);
+
+        // Calcul des coordonnées pour la queue de l'aiguille
+        var tailX = center_x + radius * 0.15 * Math.cos(hour_angle + Math.PI);
+        var tailY = center_y + radius * 0.15 * Math.sin(hour_angle + Math.PI);
+        var tailX1 = center_x + radius * 0.1 * Math.cos(hour_angle + Math.PI + Math.PI/10);
+        var tailY1 = center_y + radius * 0.1 * Math.sin(hour_angle + Math.PI + Math.PI/10);
+        var tailX2 = center_x + radius * 0.1 * Math.cos(hour_angle + Math.PI - Math.PI/10);
+        var tailY2 = center_y + radius * 0.1 * Math.sin(hour_angle + Math.PI - Math.PI/10);
+
+        // Dessiner le contour de l'aiguille
+        dc.setColor(handOutlineColor, Graphics.COLOR_TRANSPARENT);  
+        dc.setPenWidth(5);
+        dc.drawLine(tailX, tailY, tipX, tipY);
+
+        // Dessiner l'aiguille
+        dc.setColor(handColor, Graphics.COLOR_TRANSPARENT);  
+        dc.setPenWidth(3);
+        dc.drawLine(tailX, tailY, tipX, tipY);
+        dc.fillPolygon([[tipX, tipY], [tipX1, tipY1], [tipX2, tipY2]]); 
+
+        // Dessiner la queue de l'aiguille
+        dc.fillPolygon([[tailX, tailY], [tailX1, tailY1], [tailX2, tailY2]]);
+
+        // Dessiner le disque central avec dégradé
+        dc.setColor(Graphics.COLOR_LT_GRAY, Graphics.COLOR_TRANSPARENT); 
+        dc.fillCircle(center_x , center_y, radius * 0.05);
+        dc.setColor(handColor, Graphics.COLOR_TRANSPARENT);  
+        dc.drawCircle(center_x , center_y, radius * 0.05);        
+    }
+
 
     function getMoonPhase(year, month, day) {
 
@@ -212,6 +244,50 @@ class SlowMotionMoonWatchView extends WatchUi.WatchFace {
      6 => Last Quarter Moon
      7 => Waning Crescent Moon
      */
+
+    function showMoonPhase(dc, moonNumber, position_x, position_y) {
+        if (moonNumber == 0) {
+            var newMoon = WatchUi.loadResource(Rez.Drawables.newMoon) ;
+            dc.drawBitmap(position_x, position_y, newMoon) ;
+        }
+
+        if (moonNumber == 1) {
+            var waxingCrescent = WatchUi.loadResource(Rez.Drawables.waxingCrescent) ;
+            dc.drawBitmap(position_x, position_y, waxingCrescent) ;
+        }
+
+        if (moonNumber == 2) {
+            var firstQuarter = WatchUi.loadResource(Rez.Drawables.firstQuarter) ;
+            dc.drawBitmap(position_x, position_y, firstQuarter) ;
+        }
+
+        if (moonNumber == 3) {
+            var waxingGibbous = WatchUi.loadResource(Rez.Drawables.waxingGibbous) ;
+            dc.drawBitmap(position_x, position_y, waxingGibbous) ;
+        }
+
+        if (moonNumber == 4) {
+            var fullMoon = WatchUi.loadResource(Rez.Drawables.fullMoon) ;
+            dc.drawBitmap(position_x, position_y, fullMoon) ;
+        }
+
+
+        if (moonNumber == 5) {
+            var waningGibbous = WatchUi.loadResource(Rez.Drawables.waningGibbous) ;
+            dc.drawBitmap(position_x, position_y, waningGibbous) ;
+        }
+
+        if (moonNumber == 6) {
+            var thirdQuarter = WatchUi.loadResource(Rez.Drawables.thirdQuarter) ;
+            dc.drawBitmap(position_x, position_y, thirdQuarter) ;
+        }
+
+        if (moonNumber == 7) {
+            var waningCrescent = WatchUi.loadResource(Rez.Drawables.waningCrescent) ;
+            dc.drawBitmap(position_x, position_y, waningCrescent) ;
+        }
+    }
+
 
 
 }
