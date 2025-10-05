@@ -15,6 +15,7 @@ class SlowMotionMoonWatchView extends WatchUi.WatchFace {
 
     private var _centerX as Number = 0;
     private var _centerY as Number = 0;
+    private var _radius as Number = 0;
     private var _radiusMarkers as Number = 0;
     //private var _hasNotifications as Boolean = false;
 
@@ -28,6 +29,7 @@ class SlowMotionMoonWatchView extends WatchUi.WatchFace {
         _centerX = dc.getWidth() / 2;
         _centerY = dc.getHeight() / 2;
         _radiusMarkers = dc.getWidth() /2;
+        _radius = (_centerX < _centerY ? _centerX : _centerY) - 20;
         setLayout(Rez.Layouts.WatchFace(dc));
     }
 
@@ -59,6 +61,8 @@ class SlowMotionMoonWatchView extends WatchUi.WatchFace {
         // Set background color
         dc.setColor(Graphics.COLOR_BLACK , Graphics.COLOR_TRANSPARENT);
         dc.fillCircle(center_x, center_y, diameter);
+        drawConcentricBackground(dc);
+        drawStarField(dc);
 
         //Red Moon
 	    var RedMoon = WatchUi.loadResource(Rez.Drawables.redmoon) ;
@@ -204,6 +208,63 @@ class SlowMotionMoonWatchView extends WatchUi.WatchFace {
         dc.drawText(_centerX, _centerY + _radiusMarkers * 0.78, Graphics.FONT_XTINY, "12", Graphics.TEXT_JUSTIFY_CENTER);
         dc.drawText(_centerX - _radiusMarkers * 0.82, _centerY - _radiusMarkers * 0.08, Graphics.FONT_XTINY, "18", Graphics.TEXT_JUSTIFY_CENTER);
         dc.drawText(_centerX + _radiusMarkers * 0.82, _centerY - _radiusMarkers * 0.08, Graphics.FONT_XTINY, "6", Graphics.TEXT_JUSTIFY_CENTER);
+    }
+
+     // NOUVELLE FONCTION : pour dessiner background
+     private function drawConcentricBackground(dc as Dc) as Void {
+        // Couleurs du dégradé du plus foncé au plus clair
+        var colors = [
+            0x000510, // Centre: Bleu très très sombre
+            0x000A18,
+            0x001020,
+            0x001528,
+            0x001A30,
+            0x002038,
+            0x002540,
+            0x003048,
+            0x003550,
+            0x004060  // Extérieur: Bleu nuit plus clair
+        ];
+        var maxRadius = _radius + 20;
+        var numRings = colors.size();
+        
+        // Dessiner les cercles concentriques du plus grand au plus petit
+        for (var i = numRings - 1; i >= 0; i--) {
+            var ringRadius = maxRadius * (i + 1) / numRings;
+            dc.setColor(colors[i], Graphics.COLOR_TRANSPARENT);
+            dc.fillCircle(_centerX, _centerY, ringRadius);
+        }
+    }
+
+
+    private function drawStarField(dc as Dc) as Void {
+        dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
+
+        // Vous pouvez ajuster le nombre d'étoiles ici
+        var numStars = 200;
+        var width = dc.getWidth();
+        var height = dc.getHeight();
+
+        // Utilise une graine (seed) constante pour que le champ d'étoiles soit
+        // identique à chaque appel. C'est un simple générateur pseudo-aléatoire.
+        var seed = 1;
+
+        for (var i = 0; i < numStars; i++) {
+            // Génère une coordonnée X pseudo-aléatoire
+            seed = (seed * 1664525 + 1013904223) & 0x7FFFFFFF;
+            var x = seed % width;
+
+            // Génère une coordonnée Y pseudo-aléatoire
+            seed = (seed * 1664525 + 1013904223) & 0x7FFFFFFF;
+            var y = seed % height;
+
+            // Fait varier la taille des étoiles pour un effet plus naturel
+            // 30% des étoiles seront un peu plus grandes.
+            seed = (seed * 1664525 + 1013904223) & 0x7FFFFFFF;
+            var size = (seed % 10 > 7) ? 2 : 1;
+
+            dc.fillCircle(x, y, size);
+        }
     }
 
      // NOUVELLE FONCTION : pour dessiner la phase de la Lune  
