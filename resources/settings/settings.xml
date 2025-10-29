@@ -8,4 +8,8 @@
         <settingConfig type="boolean" />
     </setting>
 
+    <setting propertyKey="@Properties.invertDisplay" title="@Strings.invertDisplayTitle">
+        <settingConfig type="boolean" />
+    </setting>
+
 </settings>

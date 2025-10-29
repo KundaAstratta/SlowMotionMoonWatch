@@ -13,6 +13,8 @@ class SlowMotionMoonWatchView extends WatchUi.WatchFace {
    //angle adjust for time hands
     var ANGLE_ADJUST = Math.PI / 2.0;
 
+    private var _isInSleepMode as Boolean = false;
+
     private var _centerX as Number = 0;
     private var _centerY as Number = 0;
     private var _radius as Number = 0;
@@ -40,6 +42,7 @@ class SlowMotionMoonWatchView extends WatchUi.WatchFace {
     }
 
     // Update the view
+    /*
     function onUpdate(dc as Dc) as Void {
         // Get the current time and format it correctly
         var clockTime = System.getClockTime();
@@ -50,10 +53,18 @@ class SlowMotionMoonWatchView extends WatchUi.WatchFace {
         var center_y = dc.getHeight() / 2;
         var diameter = dc.getWidth() ;
         var radius = diameter / 2 ;
+
+        var isInverted = Application.getApp().getProperty("invertDisplay");
+
+        var angleOffset = -Math.PI / 2.0; 
+        if (isInverted) {
+            angleOffset = Math.PI / 2.0;
+        }
    
         var hour_fraction = min / 60.0;
         var hour_angle = ((hours  + hour_fraction) / 24.0) * TWO_PI;
-        hour_angle -= ANGLE_ADJUST;
+        // hour_angle -= ANGLE_ADJUST;  // <- ANCIENNE LIGNE
+        hour_angle += angleOffset;      // <- NOUVELLE LIGNE qui utilise notre décalage
 
         var today = Gregorian.info(Time.now(), Time.FORMAT_SHORT);
         View.onUpdate(dc);
@@ -89,9 +100,74 @@ class SlowMotionMoonWatchView extends WatchUi.WatchFace {
             //Design Hand
             designHand(dc,handColor, center_x, center_y, hour_angle, radius);
         }
+    }
+    */
+    // Update the view
+function onUpdate(dc as Dc) as Void {
+    // --- CALCULS COMMUNS ---
+    // Ces calculs sont nécessaires dans les deux modes (actif et veille)
+    var clockTime = System.getClockTime();
+    var hours = clockTime.hour;
+    var min = clockTime.min;
+    var center_x = dc.getWidth() / 2;
+    var center_y = dc.getHeight() / 2;
+    var radius = dc.getWidth() / 2;
 
+    var isInverted = Application.getApp().getProperty("invertDisplay");
+    var angleOffset = -Math.PI / 2.0; 
+    if (isInverted) {
+        angleOffset = Math.PI / 2.0;
     }
 
+    var hour_fraction = min / 60.0;
+    var hour_angle = ((hours + hour_fraction) / 24.0) * TWO_PI;
+    hour_angle += angleOffset;
+
+    // --- LOGIQUE D'AFFICHAGE SELON LE MODE ---
+
+    // Si la montre est en mode veille
+    if (_isInSleepMode) {
+        // 1. Fond noir
+        dc.setColor(Graphics.COLOR_BLACK, Graphics.COLOR_BLACK);
+        dc.clear();
+
+        // 2. Fond étoilé
+        drawStarField(dc);
+
+        // 3. Aiguille simple
+        var handColor = Graphics.COLOR_YELLOW;
+        basicHand(dc, handColor, center_x, center_y, hour_angle, radius);
+
+    // Si la montre est en mode actif (affichage complet)
+    } else {
+        View.onUpdate(dc);
+
+        // Fond
+        dc.setColor(Graphics.COLOR_BLACK, Graphics.COLOR_TRANSPARENT);
+        dc.fillCircle(center_x, center_y, dc.getWidth());
+        drawConcentricBackground(dc);
+        drawStarField(dc);
+
+        // Image centrale
+        var RedMoon = WatchUi.loadResource(Rez.Drawables.redmoon);
+        dc.drawBitmap(center_x, center_y, RedMoon);
+
+        // Tous les autres éléments
+        drawHourMarkers(dc);
+        drawCurvedMonth(dc);
+        drawSystemInfo(dc);
+        drawMoonPhase(dc);
+
+        // Choix de l'aiguille
+        var isBasicHand = Application.getApp().getProperty("isBasicHand");
+        var handColor = Graphics.COLOR_YELLOW;
+        if (isBasicHand) {
+            basicHand(dc, handColor, center_x, center_y, hour_angle, radius);
+        } else {
+            designHand(dc, handColor, center_x, center_y, hour_angle, radius);
+        }
+    }
+}
     // Called when this View is removed from the screen. Save the
     // state of this View here. This includes freeing resources from
     // memory.
@@ -100,10 +176,14 @@ class SlowMotionMoonWatchView extends WatchUi.WatchFace {
 
     // The user has just looked at their watch. Timers and animations may be started here.
     function onExitSleep() as Void {
+        _isInSleepMode = false;
+        WatchUi.requestUpdate();
     }
 
     // Terminate any active timers and prepare for slow updates.
     function onEnterSleep() as Void {
+        _isInSleepMode = true;
+        WatchUi.requestUpdate();
     }
 
     function basicHand(dc,handColor, center_x, center_y, hour_angle, radius) {
@@ -168,10 +248,21 @@ class SlowMotionMoonWatchView extends WatchUi.WatchFace {
         
         var outerRadius = _radiusMarkers - 5;
         var innerRadius = _radiusMarkers - 20; // Allongé de 15 à 20 (5 pixels de plus)
+
+        // 1. On récupère à nouveau le réglage
+        var isInverted = Application.getApp().getProperty("invertDisplay");
+
+        // 2. On définit le même décalage que pour l'aiguille
+        var angleOffset = -Math.PI / 2.0;
+        if (isInverted) {
+            angleOffset = Math.PI / 2.0;
+        }
         
         // Dessiner les traits d'heures
         for (var i = 0; i < 24; i++) {
-            var angle = (i * Math.PI * 2) / 24 - Math.PI / 2;
+            // var angle = (i * Math.PI * 2) / 24 - Math.PI / 2; // <- ANCIENNE LIGNE
+            var angle = (i * Math.PI * 2) / 24 + angleOffset;    // <- NOUVELLE LIGNE
+            
             var cos = Math.cos(angle);
             var sin = Math.sin(angle);
             
@@ -186,7 +277,9 @@ class SlowMotionMoonWatchView extends WatchUi.WatchFace {
             dc.setColor(0xFFD700, Graphics.COLOR_TRANSPARENT); // Couleur or pour les points
             for (var j = 1; j <= 3; j++) {
                 // Calculer l'angle pour chaque point (répartition égale)
-                var nextHourAngle = ((i + 1) * Math.PI * 2) / 24 - Math.PI / 2;
+               // var nextHourAngle = ((i + 1) * Math.PI * 2) / 24 - Math.PI / 2; // <- ANCIENNE LIGNE
+                var nextHourAngle = ((i + 1) * Math.PI * 2) / 24 + angleOffset;      // <- NOUVELLE LIGNE
+        
                 var pointAngle = angle + (nextHourAngle - angle) * j / 4;
                 
                 var pointCos = Math.cos(pointAngle);
@@ -203,12 +296,24 @@ class SlowMotionMoonWatchView extends WatchUi.WatchFace {
         }
         
         // Numéros des heures principales
+        var topLabel = "0";
+        var bottomLabel = "12";
+        var leftLabel = "18";
+        var rightLabel = "6";
+
+        if (isInverted) {
+            topLabel = "12";
+            bottomLabel = "0";
+            leftLabel = "6";
+            rightLabel = "18";
+        }
+        
         dc.setColor(0xFFD700, Graphics.COLOR_TRANSPARENT);  
-        dc.drawText(_centerX, _centerY - _radiusMarkers * 0.92, Graphics.FONT_XTINY, "0", Graphics.TEXT_JUSTIFY_CENTER);
-        dc.drawText(_centerX, _centerY + _radiusMarkers * 0.78, Graphics.FONT_XTINY, "12", Graphics.TEXT_JUSTIFY_CENTER);
-        dc.drawText(_centerX - _radiusMarkers * 0.82, _centerY - _radiusMarkers * 0.08, Graphics.FONT_XTINY, "18", Graphics.TEXT_JUSTIFY_CENTER);
-        dc.drawText(_centerX + _radiusMarkers * 0.82, _centerY - _radiusMarkers * 0.08, Graphics.FONT_XTINY, "6", Graphics.TEXT_JUSTIFY_CENTER);
-    }
+        dc.drawText(_centerX, _centerY - _radiusMarkers * 0.92, Graphics.FONT_XTINY, topLabel, Graphics.TEXT_JUSTIFY_CENTER);
+        dc.drawText(_centerX, _centerY + _radiusMarkers * 0.78, Graphics.FONT_XTINY, bottomLabel, Graphics.TEXT_JUSTIFY_CENTER);
+        dc.drawText(_centerX - _radiusMarkers * 0.82, _centerY - _radiusMarkers * 0.08, Graphics.FONT_XTINY, leftLabel, Graphics.TEXT_JUSTIFY_CENTER);
+        dc.drawText(_centerX + _radiusMarkers * 0.82, _centerY - _radiusMarkers * 0.08, Graphics.FONT_XTINY, rightLabel, Graphics.TEXT_JUSTIFY_CENTER);
+     }
 
      // NOUVELLE FONCTION : pour dessiner background
      private function drawConcentricBackground(dc as Dc) as Void {

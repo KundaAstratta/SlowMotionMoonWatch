@@ -3,6 +3,6 @@
     <property id="BackgroundColor" type="number">0x000000</property>
     <property id="isShowNumbers" type="boolean">true</property>
     <property id="isBasicHand" type="boolean">false</property>
-
+    <property id="invertDisplay" type="boolean">false</property>
 
 </properties>

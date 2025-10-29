@@ -4,6 +4,7 @@
     <string id="isShowNumbersTitle">Show numbers (0,6,12,18) ? </string>
     <string id="isBasicHandTitle">Show basic hand ? </string>
 
+    <string id="invertDisplayTitle">Invert display (12h to the top)</string>
 
     <string id="ColorBlack">Black</string>
 
