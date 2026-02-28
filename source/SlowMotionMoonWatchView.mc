@@ -316,6 +316,7 @@ function onUpdate(dc as Dc) as Void {
      }
 
      // NOUVELLE FONCTION : pour dessiner background
+     /*
      private function drawConcentricBackground(dc as Dc) as Void {
         // Couleurs du dégradé du plus foncé au plus clair
         var colors = [
@@ -337,6 +338,39 @@ function onUpdate(dc as Dc) as Void {
         for (var i = numRings - 1; i >= 0; i--) {
             var ringRadius = maxRadius * (i + 1) / numRings;
             dc.setColor(colors[i], Graphics.COLOR_TRANSPARENT);
+            dc.fillCircle(_centerX, _centerY, ringRadius);
+        }
+    }
+    */
+
+    private function drawConcentricBackground(dc as Dc) as Void {
+        var numRings = 40; // Increased for smoother gradient
+        var maxRadius = _radius + 20;
+
+        // Start Color (Center) - Darkest (0x000510)
+        var startR = 0;
+        var startG = 0x05;
+        var startB = 0x10;
+
+        // End Color (Outer) - Lightest (0x004060)
+        var endR = 0;
+        var endG = 0x40;
+        var endB = 0x60;
+
+        // Draw concentric circles from largest (outer) to smallest (inner)
+        for (var i = numRings - 1; i >= 0; i--) {
+            var ratio = i.toFloat() / (numRings - 1);
+            
+            // Interpolate colors
+            var r = startR + (endR - startR) * ratio;
+            var g = startG + (endG - startG) * ratio;
+            var b = startB + (endB - startB) * ratio;
+            
+            var color = (r.toLong() << 16) | (g.toLong() << 8) | b.toLong();
+            
+            var ringRadius = maxRadius * (i + 1) / numRings;
+            
+            dc.setColor(color.toNumber(), Graphics.COLOR_TRANSPARENT);
             dc.fillCircle(_centerX, _centerY, ringRadius);
         }
     }
